@@ -3,8 +3,15 @@ import './style.css'
 const canvas = document.getElementById('scroll-canvas');
 const context = canvas.getContext('2d');
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function resizeCanvas() {
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = window.innerWidth * dpr;
+  canvas.height = window.innerHeight * dpr;
+  context.imageSmoothingEnabled = true;
+  context.imageSmoothingQuality = 'high';
+}
+
+resizeCanvas();
 
 const frameCount = 300;
 const currentFrame = index => (
@@ -74,7 +81,6 @@ window.addEventListener('scroll', () => {
 });
 
 window.addEventListener('resize', () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  resizeCanvas();
   render();
 });
