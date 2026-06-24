@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>XOVVA - Medical Affairs &amp; Support</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f2f4f6",
+                        "primary": "#af2908",
+                        "on-secondary-fixed-variant": "#3e4754",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e6e8ea",
+                        "on-secondary-fixed": "#131c27",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#ffb4a3",
+                        "secondary-container": "#d7e0ef",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#b22b0b",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "primary-fixed-dim": "#ffb4a3",
+                        "surface-container-highest": "#e0e3e5",
+                        "primary-container": "#d24121",
+                        "on-tertiary-container": "#fdfcff",
+                        "secondary-fixed-dim": "#bec7d6",
+                        "on-surface-variant": "#5a413b",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#66768d",
+                        "secondary-fixed": "#dae3f2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-fixed": "#d3e4fe",
+                        "secondary": "#565f6c",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "background": "#f7f9fb",
+                        "on-surface": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#4d5d73",
+                        "surface-dim": "#d8dadc",
+                        "surface-container": "#eceef0",
+                        "outline-variant": "#e2bfb7",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#3d0600",
+                        "outline": "#8e7069",
+                        "on-background": "#191c1e",
+                        "primary-fixed": "#ffdad2",
+                        "surface": "#f7f9fb",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-variant": "#e0e3e5",
+                        "on-primary-fixed-variant": "#8b1a00",
+                        "on-primary-container": "#fffbff",
+                        "surface-bright": "#f7f9fb",
+                        "on-secondary-container": "#5a6370"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "4rem",
+                        "margin-mobile": "1rem",
+                        "stack-sm": "0.5rem",
+                        "margin-desktop": "5rem",
+                        "stack-md": "1.5rem",
+                        "gutter": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "label-caps": ["Work Sans"],
+                        "display-lg": ["Playfair Display"],
+                        "data-mono": ["Work Sans"],
+                        "body-md": ["Work Sans"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "data-mono": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-lowest border-b border-surface-variant/20 sticky top-0 z-50 w-full">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-full mx-auto">
+<a href="/index.html" class="font-headline-lg text-headline-lg tracking-tighter text-on-surface">XOVVA</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors" href="/toneva.html">TONEVA</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors" href="/trichovva.html">TRICHOVVA</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors" href="/clinical-evidence.html">Clinical Evidence</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors" href="/for-professionals.html">For Professionals</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="md:hidden flex items-center justify-center w-10 h-10 text-on-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center w-full py-stack-lg px-margin-mobile md:px-margin-desktop space-y-stack-lg max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="w-full text-center max-w-3xl mx-auto space-y-stack-sm">
+<h1 class="font-display-lg text-display-lg text-on-surface">Medical Affairs &amp; Support</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Dedicated clinical and logistical support for licensed dermatologists and aesthetic practitioners utilizing XOVVA protocols.</p>
+</section>
+<!-- Content Grid Layout -->
+<div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:items-start">
+<!-- Contact Form Area (Takes 8 columns on large screens) -->
+<div class="lg:col-span-8 bg-surface-container-lowest p-8 md:p-12 border border-surface-variant/30 rounded-lg shadow-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-8 border-b border-surface-variant/20 pb-4">Professional Inquiry Form</h2>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Full Name -->
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant" for="fullName">Full Name *</label>
+<input class="w-full bg-transparent border-b border-surface-variant/40 focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors placeholder-on-surface-variant/50" id="fullName" name="fullName" placeholder="Dr. Jane Doe" required="" type="text"/>
+</div>
+<!-- Clinic/Practice Name -->
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant" for="clinicName">Clinic / Practice Name *</label>
+<input class="w-full bg-transparent border-b border-surface-variant/40 focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors placeholder-on-surface-variant/50" id="clinicName" name="clinicName" placeholder="Aesthetic Dermatology Institute" required="" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Medical License Number -->
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant" for="licenseNumber">Medical License Number *</label>
+<input class="w-full bg-transparent border-b border-surface-variant/40 focus:border-primary focus:ring-0 px-0 py-2 font-data-mono text-on-surface transition-colors placeholder-on-surface-variant/50" id="licenseNumber" name="licenseNumber" placeholder="e.g. ME123456" required="" type="text"/>
+<p class="text-[10px] text-on-surface-variant/70 mt-1">Required for clinical data requests.</p>
+</div>
+<!-- Nature of Inquiry -->
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant" for="inquiryType">Nature of Inquiry *</label>
+<select class="w-full bg-transparent border-b border-surface-variant/40 focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors" id="inquiryType" name="inquiryType" required="">
+<option disabled="" selected="" value="">Select Inquiry Type</option>
+<option value="clinical">Clinical Trial Data &amp; Evidence</option>
+<option value="protocol">Treatment Protocol Guidance</option>
+<option value="logistics">Logistics &amp; Supply</option>
+<option value="adverse">Adverse Event Reporting</option>
+<option value="other">Other Professional Support</option>
+</select>
+</div>
+</div>
+<!-- Message -->
+<div class="space-y-2 pt-4">
+<label class="block font-label-caps text-label-caps text-on-surface-variant" for="message">Detailed Message *</label>
+<textarea class="w-full bg-surface-container-low border border-surface-variant/20 focus:border-primary focus:ring-1 focus:ring-primary p-4 rounded font-body-md text-on-surface transition-colors placeholder-on-surface-variant/50 resize-y" id="message" name="message" placeholder="Provide specific details regarding your clinical inquiry..." required="" rows="5"></textarea>
+</div>
+<!-- Submit Action -->
+<div class="pt-6 flex justify-end">
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-caps text-label-caps px-8 py-4 rounded uppercase tracking-widest transition-colors flex items-center space-x-2" type="submit">
+<span>Submit Inquiry</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Direct Contact Directory (Takes 4 columns) -->
+<div class="lg:col-span-4 space-y-6">
+<div class="bg-surface-container-low p-6 md:p-8 rounded-lg border border-surface-variant/20">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-6 uppercase tracking-widest border-b border-surface-variant/20 pb-2">Direct Directory</h3>
+<ul class="space-y-6">
+<!-- Professional Relations -->
+<li class="flex items-start space-x-4">
+<div class="bg-surface-container-highest p-2 rounded-full text-primary shrink-0">
+<span class="material-symbols-outlined">handshake</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-lg">Professional Relations</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 text-sm">Partnerships and account management.</p>
+<a class="font-data-mono text-data-mono text-primary hover:underline mt-2 inline-block" href="mailto:relations@xovva.com">relations@xovva.com</a>
+<p class="font-data-mono text-data-mono text-on-surface mt-1">+1 (800) 555-0199</p>
+</div>
+</li>
+<!-- Clinical Inquiries -->
+<li class="flex items-start space-x-4">
+<div class="bg-surface-container-highest p-2 rounded-full text-primary shrink-0">
+<span class="material-symbols-outlined">science</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-lg">Clinical Inquiries</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 text-sm">Medical science liaisons and trial data.</p>
+<a class="font-data-mono text-data-mono text-primary hover:underline mt-2 inline-block" href="mailto:medical@xovva.com">medical@xovva.com</a>
+</div>
+</li>
+<!-- Logistics -->
+<li class="flex items-start space-x-4">
+<div class="bg-surface-container-highest p-2 rounded-full text-primary shrink-0">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-lg">Logistics &amp; Supply</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 text-sm">Order tracking and cold-chain logistics.</p>
+<a class="font-data-mono text-data-mono text-primary hover:underline mt-2 inline-block" href="mailto:supply@xovva.com">supply@xovva.com</a>
+</div>
+</li>
+</ul>
+</div>
+<!-- Emergency Reporting Card -->
+<div class="bg-surface-container p-6 rounded-lg border-l-4 border-error border-y border-r border-surface-variant/20">
+<div class="flex items-center space-x-3 text-error mb-3">
+<span class="material-symbols-outlined font-variation-settings-'FILL'-1">warning</span>
+<h4 class="font-label-caps text-label-caps font-bold">Adverse Event Reporting</h4>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4">To report a suspected adverse reaction to any XOVVA product, please contact our Pharmacovigilance team immediately.</p>
+<a class="font-data-mono text-data-mono font-bold text-error block" href="tel:+18005559999">+1 (800) 555-9999 (24/7 Line)</a>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-dim border-t border-outline-variant/10 w-full mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-stack-lg w-full max-w-full mx-auto">
+<!-- Brand & Copyright -->
+<div class="md:col-span-1 space-y-4">
+<div class="font-headline-md text-headline-md text-on-surface">XOVVA</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">© 2024 XOVVA Pharmaceuticals. For licensed medical professional use only.</p>
+</div>
+<!-- Links Area (spanning remaining columns) -->
+<div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+<!-- We map the links from JSON into columns -->
+<div class="flex flex-col space-y-3">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:underline decoration-primary transition-all" href="/medical-disclaimer.html">Medical Disclaimer</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:underline decoration-primary transition-all" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col space-y-3">
+<a class="font-label-caps text-label-caps text-primary font-bold hover:underline decoration-primary transition-all" href="/contact-support.html">Contact Support</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:underline decoration-primary transition-all" href="#">Ingredient Transparency</a>
+</div>
+<div class="flex flex-col space-y-3">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:underline decoration-primary transition-all" href="/clinical-evidence.html">Clinical Data</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

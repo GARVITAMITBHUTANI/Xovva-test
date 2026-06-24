@@ -14,6 +14,8 @@ export default defineConfig({
         'clinical-evidence': resolve(__dirname, 'clinical-evidence.html'),
         'for-professionals': resolve(__dirname, 'for-professionals.html'),
         'register-clinic': resolve(__dirname, 'register-clinic.html'),
+        'medical-disclaimer': resolve(__dirname, 'medical-disclaimer.html'),
+        'contact-support': resolve(__dirname, 'contact-support.html'),
       },
     },
   },
