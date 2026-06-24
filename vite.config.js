@@ -11,6 +11,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         toneva: resolve(__dirname, 'toneva.html'),
         trichovva: resolve(__dirname, 'trichovva.html'),
+        'clinical-evidence': resolve(__dirname, 'clinical-evidence.html'),
       },
     },
   },

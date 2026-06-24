@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>XOVVA - Clinical Evidence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffdad2",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "on-primary-fixed": "#3d0600",
+                    "error": "#ba1a1a",
+                    "on-surface": "#191c1e",
+                    "surface-container-high": "#e6e8ea",
+                    "on-secondary-fixed": "#131c27",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#fffbff",
+                    "surface-container-low": "#f2f4f6",
+                    "on-primary-fixed-variant": "#8b1a00",
+                    "surface-bright": "#f7f9fb",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#565f6c",
+                    "outline": "#8e7069",
+                    "tertiary": "#4d5d73",
+                    "tertiary-container": "#66768d",
+                    "on-secondary-fixed-variant": "#3e4754",
+                    "secondary-container": "#d7e0ef",
+                    "surface": "#f7f9fb",
+                    "surface-dim": "#d8dadc",
+                    "primary-container": "#d24121",
+                    "on-secondary-container": "#5a6370",
+                    "primary": "#af2908",
+                    "surface-container-highest": "#e0e3e5",
+                    "secondary-fixed": "#dae3f2",
+                    "inverse-on-surface": "#eff1f3",
+                    "outline-variant": "#e2bfb7",
+                    "inverse-primary": "#ffb4a3",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#fdfcff",
+                    "surface-tint": "#b22b0b",
+                    "inverse-surface": "#2d3133",
+                    "on-background": "#191c1e",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#ffb4a3",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "on-surface-variant": "#5a413b",
+                    "background": "#f7f9fb",
+                    "tertiary-fixed": "#d3e4fe",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#bec7d6",
+                    "on-error": "#ffffff",
+                    "surface-container": "#eceef0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "1.5rem",
+                    "stack-lg": "4rem",
+                    "stack-sm": "0.5rem",
+                    "margin-mobile": "1rem",
+                    "margin-desktop": "5rem",
+                    "stack-md": "1.5rem"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "label-caps": ["Work Sans"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "body-lg": ["Work Sans"],
+                    "data-mono": ["Work Sans"],
+                    "body-md": ["Work Sans"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "data-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Work Sans', sans-serif; background-color: #f7f9fb; color: #191c1e; }
+        h1, h2, h3, h4, h5, h6, .display-lg, .headline-lg, .headline-md { font-family: 'Playfair Display', serif; }
+        .data-mono { font-family: 'Work Sans', monospace; font-variant-numeric: tabular-nums; }
+        
+        /* Subtle scientific grid background */
+        .bg-grid-pattern {
+            background-image: 
+                linear-gradient(to right, rgba(142, 112, 105, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(142, 112, 105, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Ambient shadows */
+        .shadow-medical {
+            box-shadow: 0 4px 24px rgba(25, 28, 30, 0.04);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-surface-container-lowest border-b border-surface-variant/20 sticky top-0 z-50 w-full transition-shadow duration-300">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-full mx-auto">
+<!-- Brand -->
+<a class="font-headline-lg text-headline-lg tracking-tighter text-on-surface dark:text-on-surface flex items-center gap-2" href="/index.html">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">science</span>
+                XOVVA
+            </a>
+<!-- Navigation Links (Web) -->
+<ul class="hidden md:flex items-center gap-gutter">
+<li>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-caps text-label-caps hover:text-primary dark:hover:text-primary-fixed-dim transition-colors py-2" href="/toneva.html">TONEVA</a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-caps text-label-caps hover:text-primary dark:hover:text-primary-fixed-dim transition-colors py-2" href="/trichovva.html">TRICHOVVA</a>
+</li>
+<li>
+<a class="text-primary dark:text-primary border-b-2 border-primary pb-1 font-label-caps text-label-caps hover:text-primary dark:hover:text-primary-fixed-dim transition-colors py-2 opacity-80" href="/clinical-evidence.html">Clinical Evidence</a>
+</li>
+<li>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-caps text-label-caps hover:text-primary dark:hover:text-primary-fixed-dim transition-colors py-2" href="#">For Professionals</a>
+</li>
+</ul>
+<!-- Trailing Action -->
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center justify-center px-6 py-2 bg-inverse-surface text-inverse-on-surface font-label-caps text-label-caps hover:bg-on-surface transition-colors rounded">
+                    Login
+                </button>
+<button class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col w-full">
+<!-- Hero Section -->
+<section class="relative w-full min-h-[716px] flex items-center justify-start px-margin-mobile md:px-margin-desktop py-stack-lg bg-surface overflow-hidden">
+<!-- Scientific Background Image -->
+<div class="absolute inset-0 z-0 opacity-40 mix-blend-multiply pointer-events-none">
+<div class="w-full h-full bg-cover bg-center" data-alt="A highly detailed, ultra-high-resolution microscopic view of cellular structures, resembling human hair follicles or epidermis. The image is bathed in soft, clinical white and cool grey lighting, creating a sterile, laboratory aesthetic. The cells have a subtle, translucent quality with extremely shallow depth of field, blurring the edges to focus on sharp central details. The overall mood is hyper-modern, scientific, and premium." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDAWWbM8Jz9SUV-WXE9h0KiQzC-Mk1Sn7v9R62Mg8eJPjVJ23LvHOrv6PjRNVqGfwy1bs-AeljvQIH2xW6n1mkMozH0K8ygwhr-nc8N5XjDx1JctaK1isMSroe5ArTFvt42e3C6OSk6F6n_pWGy_Au3xRwOmmphjaecEF-GKi8fyeqRzNPgKPfsa41JqdnoTQOiDfSeXi7Y2o_ZPB5QqBs7TPSgzl_Vgkwu1adtkmCf3aGsGMzRzYxiHTMNrmuJEV4FdtU8Jz3xUDDS')"></div>
+</div>
+<div class="relative z-10 max-w-3xl flex flex-col gap-stack-md bg-surface-container-lowest/80 backdrop-blur-md p-8 md:p-12 border border-outline-variant/30 shadow-medical rounded-xl">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">Peer-Reviewed Research</span>
+<h1 class="font-display-lg text-display-lg text-on-surface">Clinical Efficacy &amp; Data</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Rigorous scientific validation underpins every XOVVA formulation. Explore our compendium of independent clinical trials, in-vivo studies, and peer-reviewed whitepapers demonstrating statistically significant outcomes in aesthetic dermatology.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="px-8 py-3 bg-inverse-surface text-inverse-on-surface font-label-caps text-label-caps hover:bg-on-surface transition-colors flex items-center justify-center gap-2 rounded">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Download Full Compendium
+                    </button>
+<button class="px-8 py-3 bg-transparent border border-outline-variant text-on-surface font-label-caps text-label-caps hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2 rounded">
+                        View Methodology
+                    </button>
+</div>
+</div>
+</section>
+<!-- Clinical Study Summaries -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-stack-lg bg-surface-container-lowest relative">
+<div class="max-w-7xl mx-auto flex flex-col gap-stack-lg">
+<div class="text-center flex flex-col gap-4 items-center mb-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">In-Vivo Trial Outcomes</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Double-blind, placebo-controlled studies conducted over 12 weeks with quantifiable clinical grading.</p>
+</div>
+<!-- TONEVA Data Card -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+<div class="lg:col-span-5 flex flex-col justify-center gap-6 bg-surface p-8 rounded-xl border border-outline-variant/20 shadow-medical">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-caps text-[10px] rounded-full">DEPIGMENTATION</span>
+<span class="font-headline-md text-headline-md text-on-surface">TONEVA</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Clinical evaluation of 360° Radiance complex on subjects with severe hyperpigmentation (Fitzpatrick types III-V).
+                        </p>
+<div class="flex flex-col gap-4 mt-4">
+<div class="flex justify-between items-end border-b border-outline-variant/20 pb-2">
+<span class="font-body-md text-body-md text-on-surface">Melanin Index Reduction</span>
+<span class="font-data-mono text-data-mono text-primary font-bold">42.7%</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/20 pb-2">
+<span class="font-body-md text-body-md text-on-surface">Erythema Decrease</span>
+<span class="font-data-mono text-data-mono text-primary font-bold">31.2%</span>
+</div>
+<div class="flex justify-between items-end pb-2">
+<span class="font-body-md text-body-md text-on-surface">Patient Satisfaction</span>
+<span class="font-data-mono text-data-mono text-on-surface font-bold">94.0%</span>
+</div>
+</div>
+</div>
+<!-- Chart Visualization Area -->
+<div class="lg:col-span-7 bg-surface-bright rounded-xl border border-outline-variant/20 p-8 flex flex-col justify-between shadow-medical">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-6 block">Figure 1.1: Melanin Index Reduction Over Time</span>
+<!-- Simulated Bar Chart -->
+<div class="flex-grow flex items-end justify-around gap-2 h-48 mt-4 relative border-b border-l border-outline-variant/30 pb-2 pl-2">
+<!-- Y Axis Labels -->
+<div class="absolute -left-8 top-0 bottom-0 flex flex-col justify-between text-[10px] font-data-mono text-on-surface-variant">
+<span>50%</span>
+<span>25%</span>
+<span>0%</span>
+</div>
+<!-- Bars -->
+<div class="flex flex-col items-center gap-2 group w-1/5">
+<div class="w-full bg-surface-variant rounded-t transition-all duration-500 h-[10%] group-hover:bg-tertiary-container"></div>
+<span class="font-data-mono text-[10px] text-on-surface-variant">Week 2</span>
+</div>
+<div class="flex flex-col items-center gap-2 group w-1/5">
+<div class="w-full bg-surface-variant rounded-t transition-all duration-500 h-[22%] group-hover:bg-tertiary-container"></div>
+<span class="font-data-mono text-[10px] text-on-surface-variant">Week 4</span>
+</div>
+<div class="flex flex-col items-center gap-2 group w-1/5">
+<div class="w-full bg-surface-variant rounded-t transition-all duration-500 h-[35%] group-hover:bg-tertiary-container"></div>
+<span class="font-data-mono text-[10px] text-on-surface-variant">Week 8</span>
+</div>
+<div class="flex flex-col items-center gap-2 group w-1/5">
+<div class="w-full bg-primary rounded-t transition-all duration-500 h-[85%] shadow-sm relative">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 font-data-mono text-[12px] text-primary font-bold">42.7%</div>
+</div>
+<span class="font-data-mono text-[10px] text-on-surface-variant font-bold">Week 12</span>
+</div>
+</div>
+</div>
+</div>
+<!-- TRICHOVVA Data Card (Reversed Layout) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+<!-- Chart Visualization Area -->
+<div class="lg:col-span-7 lg:order-1 order-2 bg-surface-bright rounded-xl border border-outline-variant/20 p-8 flex flex-col justify-between shadow-medical">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-6 block">Figure 2.1: Terminal Hair Density Increase</span>
+<!-- Simulated Line Chart / Graph Area -->
+<div class="flex-grow w-full h-48 mt-4 relative border-b border-l border-outline-variant/30 bg-grid-pattern">
+<div class="absolute -left-8 top-0 bottom-0 flex flex-col justify-between text-[10px] font-data-mono text-on-surface-variant">
+<span>+20%</span>
+<span>+10%</span>
+<span>0%</span>
+</div>
+<!-- Abstract Line representation -->
+<div class="absolute bottom-0 left-0 w-full h-full overflow-hidden">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path class="opacity-80" d="M 0 95 Q 25 90, 50 60 T 100 10" fill="none" stroke="#af2908" stroke-width="2"></path>
+<!-- Data Points -->
+<circle cx="0" cy="95" fill="#af2908" r="2"></circle>
+<circle cx="50" cy="60" fill="#af2908" r="2"></circle>
+<circle cx="100" cy="10" fill="#af2908" r="3" stroke="white" stroke-width="1"></circle>
+</svg>
+</div>
+<div class="absolute bottom-0 w-full flex justify-between px-2 pt-2 -mb-6">
+<span class="font-data-mono text-[10px] text-on-surface-variant">Baseline</span>
+<span class="font-data-mono text-[10px] text-on-surface-variant">Month 3</span>
+<span class="font-data-mono text-[10px] text-on-surface-variant font-bold">Month 6</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 lg:order-2 order-1 flex flex-col justify-center gap-6 bg-surface p-8 rounded-xl border border-outline-variant/20 shadow-medical">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-caps text-[10px] rounded-full">FOLLICULAR VITALITY</span>
+<span class="font-headline-md text-headline-md text-on-surface">TRICHOVVA</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                            Quantitative assessment of Anagen Reactivation protocol on mild to moderate androgenetic alopecia.
+                        </p>
+<div class="flex flex-col gap-4 mt-4">
+<div class="flex justify-between items-end border-b border-outline-variant/20 pb-2">
+<span class="font-body-md text-body-md text-on-surface">Hair Density (Terminal)</span>
+<span class="font-data-mono text-data-mono text-primary font-bold">+18.5%</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/20 pb-2">
+<span class="font-body-md text-body-md text-on-surface">Anagen/Telogen Ratio</span>
+<span class="font-data-mono text-data-mono text-primary font-bold">+24.1%</span>
+</div>
+<div class="flex justify-between items-end pb-2">
+<span class="font-body-md text-body-md text-on-surface">Reduction in Shedding</span>
+<span class="font-data-mono text-data-mono text-on-surface font-bold">62.0%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Library Section -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-stack-lg bg-surface-container-high border-t border-outline-variant/20">
+<div class="max-w-5xl mx-auto flex flex-col gap-8">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Research Library</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Access full text PDFs of our peer-reviewed publications.</p>
+</div>
+<!-- Search Input -->
+<div class="relative w-full md:w-72">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-lowest border border-outline-variant/30 rounded focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-sm text-on-surface transition-all placeholder:text-on-surface-variant/50" placeholder="Search trials, keywords..." type="text"/>
+</div>
+</div>
+<!-- Document List -->
+<div class="flex flex-col gap-2">
+<!-- List Item 1 -->
+<div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md">
+<div class="flex items-start gap-4 mb-4 sm:mb-0">
+<div class="p-2 bg-surface-variant rounded text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors">Efficacy of Novel Peptide Complex in Melasma Management</h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-caps text-[10px] text-on-surface-variant">JOURNAL OF CLINICAL DERMATOLOGY</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant/50"></span>
+<span class="font-data-mono text-[11px] text-on-surface-variant">OCT 2023</span>
+</div>
+</div>
+</div>
+<button class="px-4 py-2 text-on-surface border border-outline-variant/30 rounded hover:bg-surface-container-high transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center">
+                            Download PDF
+                        </button>
+</div>
+<!-- List Item 2 -->
+<div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md">
+<div class="flex items-start gap-4 mb-4 sm:mb-0">
+<div class="p-2 bg-surface-variant rounded text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors">Anagen Phase Prolongation via Follicular Micro-Targeting</h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-caps text-[10px] text-on-surface-variant">INTERNATIONAL TRICHOLOGY REVIEW</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant/50"></span>
+<span class="font-data-mono text-[11px] text-on-surface-variant">JAN 2024</span>
+</div>
+</div>
+</div>
+<button class="px-4 py-2 text-on-surface border border-outline-variant/30 rounded hover:bg-surface-container-high transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center">
+                            Download PDF
+                        </button>
+</div>
+<!-- List Item 3 -->
+<div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md">
+<div class="flex items-start gap-4 mb-4 sm:mb-0">
+<div class="p-2 bg-surface-variant rounded text-on-surface-variant group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors">Safety Profile and Tolerability of High-Concentration Actives</h4>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-caps text-[10px] text-on-surface-variant">AESTHETIC SCIENCE QUARTERLY</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant/50"></span>
+<span class="font-data-mono text-[11px] text-on-surface-variant">AUG 2023</span>
+</div>
+</div>
+</div>
+<button class="px-4 py-2 text-on-surface border border-outline-variant/30 rounded hover:bg-surface-container-high transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center">
+                            Download PDF
+                        </button>
+</div>
+</div>
+<div class="flex justify-center mt-4">
+<button class="text-primary font-label-caps text-label-caps hover:underline decoration-primary flex items-center gap-1">
+                        View All Publications <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-dim dark:bg-inverse-surface border-t border-outline-variant/10 full-width bottom-0">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-stack-lg w-full max-w-full mx-auto">
+<!-- Brand & Copyright -->
+<div class="flex flex-col gap-4 md:col-span-1">
+<span class="font-headline-md text-headline-md text-on-surface dark:text-inverse-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">science</span>
+                    XOVVA
+                </span>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant text-sm mt-auto">
+                    © 2024 XOVVA Pharmaceuticals. For licensed medical professional use only.
+                </p>
+</div>
+<!-- Links Column 1 -->
+<div class="flex flex-col gap-3 md:col-start-3">
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md hover:underline decoration-primary transition-all" href="#">Medical Disclaimer</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md hover:underline decoration-primary transition-all" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md hover:underline decoration-primary transition-all" href="#">Contact Support</a>
+</div>
+<!-- Links Column 2 -->
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant dark:text-surface-variant font-body-md text-body-md hover:underline decoration-primary transition-all" href="#">Ingredient Transparency</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold font-body-md text-body-md hover:underline decoration-primary transition-all" href="/clinical-evidence.html">Clinical Data</a>
+</div>
+</div>
+</footer>
+</body></html>
