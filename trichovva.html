@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TRICHOVVA™ - Clinical Hair Science</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container": "#eceef0",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "primary": "#af2908",
+                        "on-surface-variant": "#5a413b",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#dae3f2",
+                        "primary-container": "#d24121",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#66768d",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#3e4754",
+                        "primary-fixed-dim": "#ffb4a3",
+                        "on-primary-container": "#fffbff",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f7f9fb",
+                        "surface": "#f7f9fb",
+                        "primary-fixed": "#ffdad2",
+                        "surface-variant": "#e0e3e5",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "secondary-fixed-dim": "#bec7d6",
+                        "surface-dim": "#d8dadc",
+                        "on-primary-fixed-variant": "#8b1a00",
+                        "secondary": "#565f6c",
+                        "on-primary-fixed": "#3d0600",
+                        "outline": "#8e7069",
+                        "surface-tint": "#b22b0b",
+                        "inverse-primary": "#ffb4a3",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "inverse-on-surface": "#eff1f3",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary-container": "#fdfcff",
+                        "background": "#f7f9fb",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#d3e4fe",
+                        "tertiary": "#4d5d73",
+                        "outline-variant": "#e2bfb7",
+                        "on-secondary-fixed": "#131c27",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "on-background": "#191c1e",
+                        "secondary-container": "#d7e0ef",
+                        "on-secondary-container": "#5a6370"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "1.5rem",
+                        "stack-lg": "4rem",
+                        "margin-desktop": "5rem",
+                        "stack-sm": "0.5rem",
+                        "margin-mobile": "1rem",
+                        "gutter": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-lg": ["Work Sans"],
+                        "label-caps": ["Work Sans"],
+                        "data-mono": ["Work Sans"],
+                        "body-md": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "data-mono": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md antialiased selection:bg-primary/20">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-lowest border-b border-surface-variant/20 sticky top-0 z-50 w-full px-margin-desktop py-4 mx-auto flex justify-between items-center max-w-full">
+<div class="flex items-center gap-12">
+<a class="font-headline-lg text-headline-lg tracking-tighter text-on-surface" href="/index.html">XOVVA</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors uppercase" href="/toneva.html">TONEVA</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-label-caps text-label-caps hover:text-primary transition-colors uppercase" href="/trichovva.html">TRICHOVVA</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors uppercase" href="#">Clinical Evidence</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors uppercase" href="#">For Professionals</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">search</span>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors uppercase" href="#">Login</a>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full overflow-hidden bg-surface-container-lowest py-stack-lg px-margin-mobile md:px-margin-desktop">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<!-- Typography & Content (Left) -->
+<div class="md:col-span-5 flex flex-col justify-center z-10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined icon-fill text-primary" style="font-size: 16px;">science</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Clinical Hair Science</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-2">TRICHOVVA™</h1>
+<h2 class="font-headline-md text-headline-md text-tertiary mb-6">Hair Growth Serum</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+                    Dermatology Inspired | Rx Strength. Formulated for advanced hair fall control and robust hair growth support.
+                </p>
+<div class="flex flex-col gap-4 mb-10 border-l-2 border-outline-variant/30 pl-4 py-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Strengthens Roots &amp; Improves Density</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Nourishes Scalp Deeply</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Lightweight, Non-Sticky Formula</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-on-tertiary-fixed-variant text-white font-label-caps text-label-caps px-8 py-4 rounded hover:bg-opacity-90 transition-all uppercase tracking-wider flex items-center justify-center gap-2">
+                        Stock for Practice
+                        <span class="material-symbols-outlined" style="font-size: 18px;">inventory_2</span>
+</button>
+<button class="bg-transparent border border-on-tertiary-fixed-variant text-on-tertiary-fixed-variant font-label-caps text-label-caps px-8 py-4 rounded hover:bg-surface-container-low transition-all uppercase tracking-wider">
+                        Request Technical Dossier
+                    </button>
+</div>
+</div>
+<!-- Hero Image (Right) -->
+<div class="md:col-span-7 flex justify-center md:justify-end mt-12 md:mt-0 relative">
+<!-- Subtle background element to anchor the image -->
+<div class="absolute inset-0 bg-surface-container rounded-full opacity-50 blur-3xl scale-75 transform translate-x-12 translate-y-12 z-0"></div>
+<img alt="TRICHOVVA Hair Growth Serum Product Bottle and Box" class="w-full max-w-lg object-contain relative z-10 drop-shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNOdmHpfFZn5WSRfxdJ7lBmiuqlSCp5gj-V4-6k3MZxoxQP_crNgHHTeFb1Y1oxj34Ul3p-Tm4amHxDWyLDAmstToMgELovdY6ufvLJVt4kZRQKW3sYgh6wc6savpWD_fr6JL71LCTCPTfpml5RzZSKBEb_HkmJF9fXbHuIMHShQ0tV7octTF159PvLFCogIrrpk3mexmPsjDmB0Jf7bfrm0HowDiXhuaENtE8rpvSwq562K2JeWF1wt2uXiur6AT_PwYoNNzwqlks"/>
+</div>
+</div>
+</header>
+<!-- Technical Specs Section (Bento Grid) -->
+<section class="bg-surface py-stack-lg px-margin-mobile md:px-margin-desktop border-t border-outline-variant/10">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-12">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Active Formulation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Rigorous ingredient selection engineered for optimal follicular stimulation and dermal penetration.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Spec Card 1 -->
+<div class="bg-surface-container-lowest p-8 border border-outline-variant/20 rounded-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="flex justify-between items-start mb-6">
+<span class="font-data-mono text-data-mono text-primary bg-primary/10 px-3 py-1 rounded">5.0%</span>
+<span class="material-symbols-outlined text-tertiary-container">water_drop</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">Redensyl</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">A synergistic blend targeting hair follicle stem cells to reactivate the anagen phase and visibly increase hair density.</p>
+</div>
+</div>
+<!-- Spec Card 2 -->
+<div class="bg-surface-container-lowest p-8 border border-outline-variant/20 rounded-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-caps text-label-caps text-secondary bg-surface-variant px-3 py-1 rounded uppercase">Botanical Ext.</span>
+<span class="material-symbols-outlined text-tertiary-container">spa</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">Brahmi</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Traditionally proven botanical agent that provides antioxidant protection and intensely nourishes the scalp micro-environment.</p>
+</div>
+</div>
+<!-- Spec Card 3 -->
+<div class="bg-surface-container-lowest p-8 border border-outline-variant/20 rounded-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div>
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-caps text-label-caps text-secondary bg-surface-variant px-3 py-1 rounded uppercase">Building Blocks</span>
+<span class="material-symbols-outlined text-tertiary-container">architecture</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">Amino Acids</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Essential structural proteins that fortify the hair shaft from within, improving elasticity, strength, and overall resilience.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Mechanism of Action -->
+<section class="bg-surface-container-lowest py-stack-lg px-margin-mobile md:px-margin-desktop">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-margin-desktop items-center">
+<div class="order-2 md:order-1 relative h-96 bg-surface-container rounded-lg overflow-hidden border border-outline-variant/20 flex items-center justify-center">
+<!-- Abstract placeholder for scientific diagram -->
+<div class="absolute inset-0 bg-cover bg-center opacity-80 mix-blend-multiply" data-alt="A sterile, high-key macro photograph of a clear glass petri dish against a pure white background. Inside the dish, subtle, minimalist abstract representations of microscopic cellular structures or liquid droplets are visible, rendered in cool, icy blue and deep slate tones. The lighting is clinical, bright, and casts soft, diffused shadows, conveying a sense of advanced dermatological research and premium laboratory precision." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1RiSBCvoicGS0trpFZxAO4WvmEe5CJHA9lrU6tsQBjIEuzIRFcrPtrW3gTToI9Up7fi6hjBejYHNoBTe7YjxYcOJDP3JMjMEx5GMEeAbaQuocf_C35MYB3IXZm68xjgCDSeDE9nAPT9ysaoTtZ2t80GYOc5AH86-9ICvQKj-aecmNwvQVnRjTGonJPoSVuz4b5-Mz-ZGa5bvsTUwLLx0JrmCk13U0erLTrGIdo20Jjq134Jc3qHVqoyaF2stFBscWvsU-e2BU2F9a')"></div>
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant opacity-20 relative z-10" style="font-size: 120px;">biotech</span>
+</div>
+<div class="order-1 md:order-2 flex flex-col justify-center">
+<span class="font-label-caps text-label-caps text-tertiary tracking-widest uppercase mb-4">Mechanism of Action</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-6">Targeting the Anagen Phase</h3>
+<div class="space-y-6">
+<div class="flex items-start gap-4 border-b border-outline-variant/20 pb-6">
+<div class="bg-surface-container-low p-2 rounded-full flex-shrink-0 mt-1">
+<span class="material-symbols-outlined text-on-surface-variant">cycle</span>
+</div>
+<div>
+<h5 class="font-body-lg text-body-lg text-on-surface font-semibold mb-2">Phase 1: Reactivation</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">Galvanizes dormant hair follicles, shifting them from the telogen (resting) phase back into the active anagen (growth) cycle.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-surface-container-low p-2 rounded-full flex-shrink-0 mt-1">
+<span class="material-symbols-outlined text-on-surface-variant">shield_lock</span>
+</div>
+<div>
+<h5 class="font-body-lg text-body-lg text-on-surface font-semibold mb-2">Phase 2: Micro-Environment Fortification</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">Reduces localized scalp inflammation and provides essential nutrients to sustain prolonged cellular proliferation.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-dim border-t border-outline-variant/10 grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-stack-lg w-full mt-12">
+<div class="flex flex-col justify-between">
+<span class="font-headline-md text-headline-md text-on-surface mb-4">XOVVA</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm max-w-xs">
+                © 2024 XOVVA Pharmaceuticals. For licensed medical professional use only.
+            </p>
+</div>
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:underline decoration-primary transition-all uppercase" href="#">Medical Disclaimer</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:underline decoration-primary transition-all uppercase" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:underline decoration-primary transition-all uppercase" href="#">Contact Support</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:underline decoration-primary transition-all uppercase" href="#">Ingredient Transparency</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:underline decoration-primary transition-all uppercase" href="#">Clinical Data</a>
+</div>
+</footer>
+</body></html>

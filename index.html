@@ -1,113 +1,296 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scroll Animation</title>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>XOVVA - Clinical Hair &amp; Skin Science</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f2f4f6",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-container": "#eceef0",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "primary": "#af2908",
+                    "on-surface-variant": "#5a413b",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#dae3f2",
+                    "primary-container": "#d24121",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#66768d",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#3e4754",
+                    "primary-fixed-dim": "#ffb4a3",
+                    "on-primary-container": "#fffbff",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#f7f9fb",
+                    "surface": "#f7f9fb",
+                    "primary-fixed": "#ffdad2",
+                    "surface-variant": "#e0e3e5",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#e0e3e5",
+                    "secondary-fixed-dim": "#bec7d6",
+                    "surface-dim": "#d8dadc",
+                    "on-primary-fixed-variant": "#8b1a00",
+                    "secondary": "#565f6c",
+                    "on-primary-fixed": "#3d0600",
+                    "outline": "#8e7069",
+                    "surface-tint": "#b22b0b",
+                    "inverse-primary": "#ffb4a3",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "inverse-on-surface": "#eff1f3",
+                    "inverse-surface": "#2d3133",
+                    "on-tertiary-container": "#fdfcff",
+                    "background": "#f7f9fb",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#d3e4fe",
+                    "tertiary": "#4d5d73",
+                    "outline-variant": "#e2bfb7",
+                    "on-secondary-fixed": "#131c27",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#191c1e",
+                    "on-background": "#191c1e",
+                    "secondary-container": "#d7e0ef",
+                    "on-secondary-container": "#5a6370"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-md": "1.5rem",
+                    "stack-lg": "4rem",
+                    "margin-desktop": "5rem",
+                    "stack-sm": "0.5rem",
+                    "margin-mobile": "1rem",
+                    "gutter": "1.5rem"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-lg": ["Work Sans"],
+                    "label-caps": ["Work Sans"],
+                    "data-mono": ["Work Sans"],
+                    "body-md": ["Work Sans"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                    "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                    "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                    "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                    "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                    "data-mono": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                    "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #f7f9fb; /* background color from config */
+            color: #191c1e; /* on-background color from config */
+        }
+    </style>
 </head>
-
-<body>
-  <div id="app">
-    <div class="scroll-container">
-      <canvas id="scroll-canvas"></canvas>
-      <div class="hero-text" id="hero-text">
-        <h1>XOVVA</h1>
-        <p>redesigning skincare</p>
-      </div>
-    </div>
-  </div>
-
-  <section class="efficacy-section">
-    <div class="container">
-      <a href="/hero-test.html" style="text-decoration: none; color: inherit; display: inline-block;">
-        <button style="cursor: pointer; background: #d4a373; color: #120e0c; padding: 10px 20px; border: none; border-radius: 5px; font-size: 1.2rem; margin-bottom: 10px;">
-          Test Hero Component (Targeted Efficacy)
-        </button>
-      </a>
-      <p class="section-subtitle">Formulated with rigorous scientific precision to deliver visible improvements across key skin concerns.</p>
-      
-      <div class="efficacy-grid">
-        <div class="card">
-          <div class="icon-circle">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
-          </div>
-          <h3>MINIMIZES BLEMISHES</h3>
-          <p>Accelerates cellular turnover to visibly reduce the appearance of post-acne marks and minor imperfections.</p>
-        </div>
-        <div class="card">
-          <div class="icon-circle">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
-          </div>
-          <h3>REDUCES DARK SPOTS</h3>
-          <p>Inhibits melanin production at the source, fading hyperpigmentation and stubborn dark spots over time.</p>
-        </div>
-        <div class="card">
-          <div class="icon-circle">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </div>
-          <h3>EVENS SKIN TONE</h3>
-          <p>Restores overall harmony to your complexion, revealing a smooth, uniformly radiant surface.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="potency-section">
-    <div class="container potency-grid">
-      <div class="potency-image">
-        <img src="/images/serum_dropper.png" alt="Serum Dropper" />
-      </div>
-      <div class="potency-content">
-        <span class="eyebrow">CLINICAL ACTIVES</span>
-        <h2>Potency in Every Drop.</h2>
-        
-        <div class="ingredients-list">
-          <div class="ingredient">
-            <div class="ingredient-header">
-              <h3>Alpha Arbutin</h3>
-              <span class="badge">2%</span>
-            </div>
-            <p>A safe skin-brightening ingredient that helps to fade scars and pigmentation left behind by breakouts and sun damage.</p>
-          </div>
-          
-          <div class="ingredient">
-            <div class="ingredient-header">
-              <h3>Hyaluronic Acid</h3>
-              <span class="badge">0.5%</span>
-            </div>
-            <p>Delivers multi-depth hydration, plumping the skin from within and improving the absorption of other active ingredients.</p>
-          </div>
-          
-          <div class="ingredient">
-            <div class="ingredient-header">
-              <h3>Tensaunic Acid</h3>
-              <span class="badge">Proprietary</span>
-            </div>
-            <p>Our exclusive molecular complex designed to gently exfoliate while reinforcing the skin's natural barrier function.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container footer-content">
-      <div class="footer-logo">TONEVA</div>
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Clinical Studies</a>
-        <a href="#">Sustainability</a>
-        <a href="#">Contact</a>
-      </div>
-    </div>
-    <div class="container copyright">
-      <p>&copy; 2024 TONEVA. ALL RIGHTS RESERVED.</p>
-    </div>
-  </footer>
-
-  <script type="module" src="/main.js"></script>
-</body>
-
-</html>
+<body class="antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full z-50 sticky top-0 border-b border-surface-variant/20 shadow-sm">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-[1440px] mx-auto">
+<!-- Brand Logo -->
+<a class="font-headline-lg text-headline-lg tracking-tighter text-on-surface dark:text-on-surface flex items-center gap-2" href="#">
+<img class="h-8 object-contain" data-alt="XOVVA Corporate Logo in vibrant orange typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0zyg0O7PXkyBV5qnc7nZ58rlXsEpLtj1nXnLRt79Amawk6FhAAfktoz3BIeCv72Ew-uV4KdKtOUIH8Ntg0cf1f_61A38-eo7xSi0jZiWlazKHYPG_imMdQiuyIcoWvMrtxl7a2xkkIAqXJMDcv4k6_QlckZ0iIoWOC8EaZp3Nuvpjx5bD-S7xDI3FG1XhvlJhvHBTmr7IgfSmhbDX4RZYSEHckKb9qZ1WhqwlYZF1w_e5jP27Cp4iPWvS6jShhziHF7xZpd5JALqB"/>
+</a>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-caps text-label-caps hover:text-primary dark:hover:text-primary-fixed-dim transition-colors uppercase" href="/toneva.html">TONEVA</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-caps text-label-caps hover:text-primary dark:hover:text-primary-fixed-dim transition-colors uppercase" href="/trichovva.html">TRICHOVVA</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-caps text-label-caps hover:text-primary dark:hover:text-primary-fixed-dim transition-colors uppercase" href="#">Clinical Evidence</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-caps text-label-caps hover:text-primary dark:hover:text-primary-fixed-dim transition-colors uppercase" href="#">For Professionals</a>
+</div>
+<!-- Trailing Action -->
+<div class="flex items-center gap-4">
+<a class="hidden md:inline-flex text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors" href="#">Login</a>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-lg md:py-[8rem] relative overflow-hidden bg-surface-container-lowest flex items-center justify-center min-h-[70vh]">
+<div class="max-w-[1440px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-stack-md items-center relative z-10">
+<div class="flex flex-col items-start gap-6 max-w-2xl">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase bg-primary/10 px-3 py-1 rounded-full border border-primary/20">Dermatology Inspired</span>
+<h1 class="font-display-lg text-display-lg text-on-surface leading-tight">
+                        Clinical Luxury meets <br/>Rx Strength Efficacy.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        XOVVA bridges the gap between premium aesthetic experiences and rigorous clinical science. Designed exclusively for discerning dermatologists and aesthetic practitioners.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<a class="bg-on-tertiary-fixed-variant text-white px-8 py-3 rounded hover:bg-on-surface transition-colors font-label-caps text-label-caps tracking-widest uppercase flex items-center justify-center gap-2" href="#">
+                            Explore Clinical Data
+                            <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+</a>
+<a class="bg-transparent text-on-tertiary-fixed-variant border border-on-tertiary-fixed-variant/30 px-8 py-3 rounded hover:bg-surface-container-low transition-colors font-label-caps text-label-caps tracking-widest uppercase flex items-center justify-center" href="#">
+                            Partner with XOVVA
+                        </a>
+</div>
+</div>
+<div class="hidden lg:flex justify-end items-center relative">
+<!-- Abstract clinical representation or subtle product arrangement -->
+<div class="w-[500px] h-[600px] bg-surface-container-low rounded-xl relative overflow-hidden border border-surface-variant/30 shadow-sm flex flex-col justify-center items-center p-8">
+<img class="w-2/3 object-contain opacity-80 filter grayscale mix-blend-multiply" data-alt="XOVVA Logo large presentation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0zyg0O7PXkyBV5qnc7nZ58rlXsEpLtj1nXnLRt79Amawk6FhAAfktoz3BIeCv72Ew-uV4KdKtOUIH8Ntg0cf1f_61A38-eo7xSi0jZiWlazKHYPG_imMdQiuyIcoWvMrtxl7a2xkkIAqXJMDcv4k6_QlckZ0iIoWOC8EaZp3Nuvpjx5bD-S7xDI3FG1XhvlJhvHBTmr7IgfSmhbDX4RZYSEHckKb9qZ1WhqwlYZF1w_e5jP27Cp4iPWvS6jShhziHF7xZpd5JALqB"/>
+<div class="absolute bottom-8 right-8 font-data-mono text-data-mono text-on-surface-variant opacity-50">
+                             FORMULA No. <br/> TR-01 | TN-02
+                         </div>
+</div>
+</div>
+</div>
+<!-- Minimal background accent -->
+<div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-surface-container-low to-transparent opacity-50 pointer-events-none"></div>
+</section>
+<!-- Product Showcase (Bento/Split) -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-lg bg-surface relative">
+<div class="max-w-[1440px] mx-auto w-full">
+<div class="flex flex-col items-center text-center mb-stack-md md:mb-stack-lg max-w-3xl mx-auto">
+<h2 class="font-headline-lg md:font-display-lg text-headline-lg md:text-display-lg text-on-surface mb-4">Precision Formulations</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Targeted solutions engineered for visible clinical outcomes, delivered in unparalleled aesthetic packaging.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md lg:gap-gutter">
+<!-- TONEVA Card -->
+<div class="group relative bg-surface-container-lowest border border-surface-variant/30 rounded-xl overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col">
+<div class="p-8 pb-0 flex-grow">
+<span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase mb-2 block">Depigmentation Phase</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2"><a href="/toneva.html" class="hover:text-primary transition-colors">TONEVA</a></h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Molecular Brightening for 360° Radiance. Minimizes acne marks, reduces melasma, and evens skin tone.</p>
+<ul class="space-y-3 mb-8 border-t border-surface-variant/20 pt-6">
+<li class="flex justify-between items-center text-sm border-b border-surface-variant/10 pb-2">
+<span class="font-body-md text-on-surface-variant">Liposomal Azelaic Acid</span>
+<span class="font-data-mono text-data-mono text-primary font-semibold">10%</span>
+</li>
+<li class="flex justify-between items-center text-sm border-b border-surface-variant/10 pb-2">
+<span class="font-body-md text-on-surface-variant">Niacinamide</span>
+<span class="font-data-mono text-data-mono text-primary font-semibold">5%</span>
+</li>
+<li class="flex justify-between items-center text-sm border-b border-surface-variant/10 pb-2">
+<span class="font-body-md text-on-surface-variant">Tranexamic Acid</span>
+<span class="font-data-mono text-data-mono text-primary font-semibold">3%</span>
+</li>
+</ul>
+</div>
+<div class="relative h-[400px] bg-[#f8f6f5] flex items-center justify-center p-8 mt-auto border-t border-surface-variant/20 group-hover:bg-[#f2ece9] transition-colors">
+<img class="h-full w-full object-contain object-bottom transform group-hover:scale-105 transition-transform duration-500" data-alt="TONEVA Depigmentation Face Serum product box and dropper bottle on a clean white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlDkT4Pyz28n6eKaUzBJIOWrdMdYN1IavXmJK5ISx-iQjCcaEwPXaDiU1L6IJplmjofOrYyO5iGTLdND0w-BNVbddQpnCmVnA1QK3Pwz1w-AgxvkH5xaT595DbsmeCLUKoptjk8nePsi8nC5dLxRc6omtpcDLgqrcX3CTdNn3uP9pIRW_kqXXILHsPSu32eDREYEdN5gSlR1uTIzN2RVvvM6PFcrnPMZwokB1lu1yQaJE-CIqd3XgI7YKpr6XJzJF4rYAJpHUG3puD"/>
+</div>
+</div>
+<!-- TRICHOVVA Card -->
+<div class="group relative bg-surface-container-lowest border border-surface-variant/30 rounded-xl overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col">
+<div class="p-8 pb-0 flex-grow">
+<span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase mb-2 block">Follicle Support Phase</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2"><a href="/trichovva.html" class="hover:text-primary transition-colors">TRICHOVVA</a></h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Clinical Hair Science. Hair growth serum for hair fall control and density improvement. Dermatology inspired Rx strength.</p>
+<ul class="space-y-3 mb-8 border-t border-surface-variant/20 pt-6">
+<li class="flex justify-between items-center text-sm border-b border-surface-variant/10 pb-2">
+<span class="font-body-md text-on-surface-variant">Strengthens Roots</span>
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+</li>
+<li class="flex justify-between items-center text-sm border-b border-surface-variant/10 pb-2">
+<span class="font-body-md text-on-surface-variant">Improves Density</span>
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+</li>
+<li class="flex justify-between items-center text-sm border-b border-surface-variant/10 pb-2">
+<span class="font-body-md text-on-surface-variant">Nourishes Scalp</span>
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+</li>
+</ul>
+</div>
+<div class="relative h-[400px] bg-[#f4f5f7] flex items-center justify-center p-8 mt-auto border-t border-surface-variant/20 group-hover:bg-[#ebedf1] transition-colors">
+<img class="h-full w-full object-contain object-bottom transform group-hover:scale-105 transition-transform duration-500" data-alt="TRICHOVVA Clinical Hair Science serum bottle and cylinder packaging on a clean white surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNOdmHpfFZn5WSRfxdJ7lBmiuqlSCp5gj-V4-6k3MZxoxQP_crNgHHTeFb1Y1oxj34Ul3p-Tm4amHxDWyLDAmstToMgELovdY6ufvLJVt4kZRQKW3sYgh6wc6savpWD_fr6JL71LCTCPTfpml5RzZSKBEb_HkmJF9fXbHuIMHShQ0tV7octTF159PvLFCogIrrpk3mexmPsjDmB0Jf7bfrm0HowDiXhuaENtE8rpvSwq562K2JeWF1wt2uXiur6AT_PwYoNNzwqlks"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission / Data Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-lg bg-on-tertiary-fixed-variant text-white relative overflow-hidden">
+<!-- Background Texture/Shader Placeholder -->
+<div class="absolute inset-0 opacity-10 mix-blend-overlay">
+<img class="w-full h-full object-cover" data-alt="Subtle, dark, abstract macro photography of a clear serum texture with light refraction, creating a sterile medical background pattern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxEk4hcf3-oXsVrDxbfzQRANbsEDe-hxO6kkp923PPYVxaV-PZyiBD9PxEU7UU8hnI9AITMSsmz4Q6g7Ekrv4QRZw_LGCq_gSXafinOS3Wq3ijYHbdHce6Izf1HZwtspkf17_R9DV6PDuDGbsRZ3Jjh34EenumL5qULvrmtgTWMRb9qlJ2b2LqtlfQ5u0F-c6zWpxBbRogWf25aMtYGV0OqvQoR-9zR6aPeXz8dFhnMIP6_Hm7MycF8oA3skWxiaKtp7RmxI7BB8EW"/>
+</div>
+<div class="max-w-[1440px] mx-auto w-full relative z-10 grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center">
+<div>
+<h2 class="font-display-lg text-display-lg mb-6 leading-tight">Evidence-Based.<br/>Aesthetically Refined.</h2>
+<p class="font-body-lg text-body-lg text-surface-container-high mb-8 max-w-md">
+                        We believe professional dermatology requires products that perform at prescription strength while delivering a premium tactile experience. XOVVA is dedicated to transparent clinical data and rigorous ingredient standards.
+                    </p>
+<a class="inline-flex items-center gap-2 text-white border-b border-primary hover:text-primary transition-colors pb-1 font-label-caps text-label-caps uppercase tracking-widest" href="#">
+                        Request Clinical Data Package
+                        <span class="material-symbols-outlined text-sm">download</span>
+</a>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-white/5 border border-white/10 p-6 rounded-lg backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary mb-4" style="font-size: 32px; font-variation-settings: 'FILL' 1;">science</span>
+<h4 class="font-headline-md text-headline-md mb-2">Rx Strength</h4>
+<p class="font-body-sm text-surface-container text-sm">Formulated with maximal clinical efficacy percentages.</p>
+</div>
+<div class="bg-white/5 border border-white/10 p-6 rounded-lg backdrop-blur-sm mt-8">
+<span class="material-symbols-outlined text-primary mb-4" style="font-size: 32px; font-variation-settings: 'FILL' 1;">verified_user</span>
+<h4 class="font-headline-md text-headline-md mb-2">Pro Only</h4>
+<p class="font-body-sm text-surface-container text-sm">Exclusively distributed through licensed practitioners.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-dim dark:bg-inverse-surface border-t border-outline-variant/10 w-full mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-stack-lg w-full max-w-[1440px] mx-auto">
+<div class="col-span-1 md:col-span-2 flex flex-col justify-between">
+<div>
+<img class="h-6 object-contain mb-6 filter grayscale opacity-70" data-alt="XOVVA Logo grayscale in footer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0zyg0O7PXkyBV5qnc7nZ58rlXsEpLtj1nXnLRt79Amawk6FhAAfktoz3BIeCv72Ew-uV4KdKtOUIH8Ntg0cf1f_61A38-eo7xSi0jZiWlazKHYPG_imMdQiuyIcoWvMrtxl7a2xkkIAqXJMDcv4k6_QlckZ0iIoWOC8EaZp3Nuvpjx5bD-S7xDI3FG1XhvlJhvHBTmr7IgfSmhbDX4RZYSEHckKb9qZ1WhqwlYZF1w_e5jP27Cp4iPWvS6jShhziHF7xZpd5JALqB"/>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant max-w-sm mb-8">
+                        Advanced clinical formulations for dermatologists and aesthetic professionals. Elevating the standard of professional skincare and haircare.
+                    </p>
+</div>
+<p class="text-on-surface-variant dark:text-surface-variant font-label-caps text-label-caps uppercase text-xs">
+                    © 2024 XOVVA Pharmaceuticals. For licensed medical professional use only.
+                </p>
+</div>
+<div class="col-span-1">
+<h4 class="font-headline-md text-headline-md text-on-surface dark:text-inverse-on-surface mb-4 text-sm uppercase tracking-widest text-primary">Formulations</h4>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all font-body-md text-body-md" href="#">TONEVA</a></li>
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all font-body-md text-body-md" href="/trichovva.html">TRICHOVVA</a></li>
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all font-body-md text-body-md" href="#">Clinical Data</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-headline-md text-headline-md text-on-surface dark:text-inverse-on-surface mb-4 text-sm uppercase tracking-widest text-primary">Corporate</h4>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all font-body-md text-body-md" href="#">Medical Disclaimer</a></li>
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all font-body-md text-body-md" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all font-body-md text-body-md" href="#">Contact Support</a></li>
+<li><a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all font-body-md text-body-md" href="#">Ingredient Transparency</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body></html>
