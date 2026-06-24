@@ -12,6 +12,7 @@ export default defineConfig({
         toneva: resolve(__dirname, 'toneva.html'),
         trichovva: resolve(__dirname, 'trichovva.html'),
         'clinical-evidence': resolve(__dirname, 'clinical-evidence.html'),
+        'for-professionals': resolve(__dirname, 'for-professionals.html'),
       },
     },
   },
