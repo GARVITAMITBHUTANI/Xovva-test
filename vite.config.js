@@ -13,6 +13,7 @@ export default defineConfig({
         trichovva: resolve(__dirname, 'trichovva.html'),
         'clinical-evidence': resolve(__dirname, 'clinical-evidence.html'),
         'for-professionals': resolve(__dirname, 'for-professionals.html'),
+        'register-clinic': resolve(__dirname, 'register-clinic.html'),
       },
     },
   },

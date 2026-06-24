@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>XOVVA - Professional Partnership Enrollment</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-tint": "#b22b0b",
+                        "primary-fixed": "#ffdad2",
+                        "inverse-surface": "#2d3133",
+                        "on-background": "#191c1e",
+                        "secondary-container": "#d7e0ef",
+                        "primary": "#af2908",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#3d0600",
+                        "on-primary-fixed-variant": "#8b1a00",
+                        "tertiary-container": "#66768d",
+                        "outline-variant": "#e2bfb7",
+                        "on-secondary-fixed-variant": "#3e4754",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "surface": "#f7f9fb",
+                        "surface-bright": "#f7f9fb",
+                        "on-secondary-container": "#5a6370",
+                        "secondary-fixed-dim": "#bec7d6",
+                        "primary-fixed-dim": "#ffb4a3",
+                        "surface-container": "#eceef0",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary": "#565f6c",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "secondary-fixed": "#dae3f2",
+                        "on-tertiary-container": "#fdfcff",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "background": "#f7f9fb",
+                        "surface-variant": "#e0e3e5",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#ffb4a3",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-primary-container": "#fffbff",
+                        "primary-container": "#d24121",
+                        "on-surface-variant": "#5a413b",
+                        "tertiary": "#4d5d73",
+                        "on-secondary-fixed": "#131c27",
+                        "surface-container-high": "#e6e8ea",
+                        "outline": "#8e7069",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "0.5rem",
+                        "stack-md": "1.5rem",
+                        "margin-mobile": "1rem",
+                        "stack-lg": "4rem",
+                        "margin-desktop": "5rem",
+                        "gutter": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "label-caps": ["Work Sans"],
+                        "body-md": ["Work Sans"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Work Sans"],
+                        "data-mono": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "data-mono": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .input-clinical {
+            @apply w-full bg-surface-container-lowest border border-outline-variant/50 focus:border-outline focus:ring-0 rounded-DEFAULT px-4 py-3 font-body-md text-body-md text-on-surface transition-colors;
+        }
+        .label-clinical {
+            @apply block font-label-caps text-label-caps text-on-surface-variant mb-2 uppercase;
+        }
+        .step-indicator.active {
+            @apply border-primary text-primary;
+        }
+        .step-indicator.completed {
+            @apply border-primary-container bg-primary-container text-on-primary-container;
+        }
+        .step-line.completed {
+            @apply bg-primary-container;
+        }
+        .step-content {
+            display: none;
+        }
+        .step-content.active {
+            display: block;
+        }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: theme('colors.surface');
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.outline-variant');
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline');
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky bg-surface dark:bg-on-background shadow-sm z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-md max-w-[1440px] mx-auto transition-all duration-300 ease-in-out">
+<a class="font-display-lg text-display-lg tracking-tighter text-on-background dark:text-surface hover:opacity-80 transition-opacity" href="/index.html">XOVVA</a>
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-surface hover:opacity-80 transition-opacity uppercase" href="/toneva.html">TONEVA</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-surface hover:opacity-80 transition-opacity uppercase" href="/trichovva.html">TRICHOVVA</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-surface hover:opacity-80 transition-opacity uppercase" href="/clinical-evidence.html">Clinical Evidence</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-primary-fixed-dim border-b border-primary dark:border-primary-fixed-dim pb-1 hover:opacity-80 transition-opacity uppercase" href="/for-professionals.html">For Professionals</a>
+</nav>
+<button class="md:hidden text-on-background">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow flex flex-col md:flex-row max-w-[1440px] mx-auto w-full px-margin-mobile md:px-margin-desktop py-stack-lg gap-gutter">
+<!-- Main Form Area -->
+<div class="w-full md:w-2/3 flex flex-col gap-stack-lg">
+<!-- Hero Section -->
+<section class="max-w-2xl">
+<h1 class="font-display-lg text-display-lg text-on-background mb-stack-sm md:font-display-lg font-headline-lg-mobile text-headline-lg-mobile md:text-display-lg">Professional Partnership Enrollment</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Join an exclusive network of clinical experts. Provide your credentials to access our pharmaceutical-grade dermatological formulations and dedicated professional support.</p>
+</section>
+<!-- Registration Form Container -->
+<div class="bg-surface-container-lowest shadow-[0_4px_24px_-8px_rgba(0,0,0,0.05)] rounded-lg p-margin-mobile md:p-stack-md border border-surface-variant">
+<!-- Stepper -->
+<div class="flex items-center justify-between mb-stack-lg relative">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[1px] bg-outline-variant/30 z-0"></div>
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1/2 h-[1px] bg-primary-container z-0 step-line transition-all duration-300" id="progress-line" style="width: 0%;"></div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full border-2 bg-surface-container-lowest flex items-center justify-center font-data-mono text-data-mono step-indicator active" id="indicator-1">1</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant hidden md:block">Practitioner</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full border-2 border-outline-variant/50 bg-surface-container-lowest flex items-center justify-center font-data-mono text-data-mono text-outline-variant step-indicator" id="indicator-2">2</div>
+<span class="font-label-caps text-label-caps text-outline-variant hidden md:block">Clinic</span>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full border-2 border-outline-variant/50 bg-surface-container-lowest flex items-center justify-center font-data-mono text-data-mono text-outline-variant step-indicator" id="indicator-3">3</div>
+<span class="font-label-caps text-label-caps text-outline-variant hidden md:block">Preferences</span>
+</div>
+</div>
+<form id="registration-form" onsubmit="event.preventDefault();">
+<!-- Step 1: Practitioner Details -->
+<div class="step-content active" id="step-1">
+<h2 class="font-headline-md text-headline-md text-on-background mb-stack-md border-b border-surface-variant pb-stack-sm">Practitioner Details</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="col-span-1 md:col-span-2">
+<label class="label-clinical" for="fullName">Full Legal Name</label>
+<input class="input-clinical" id="fullName" placeholder="Dr. Jane Doe" type="text"/>
+</div>
+<div>
+<label class="label-clinical" for="licenseNumber">Medical License Number</label>
+<input class="input-clinical" id="licenseNumber" placeholder="e.g., MD12345678" type="text"/>
+</div>
+<div>
+<label class="label-clinical" for="specialty">Primary Specialty</label>
+<select class="input-clinical" id="specialty">
+<option disabled="" selected="" value="">Select Specialty</option>
+<option value="dermatology">Dermatology</option>
+<option value="plastic_surgery">Plastic Surgery</option>
+<option value="aesthetic_medicine">Aesthetic Medicine</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="col-span-1 md:col-span-2">
+<label class="label-clinical" for="email">Professional Email Address</label>
+<input class="input-clinical" id="email" placeholder="doctor@clinic.com" type="email"/>
+</div>
+</div>
+<div class="mt-stack-md flex justify-end">
+<button class="bg-on-background text-surface font-label-caps text-label-caps px-8 py-3 rounded-DEFAULT hover:opacity-90 transition-opacity uppercase tracking-wider" onclick="nextStep(2)" type="button">Next Step</button>
+</div>
+</div>
+<!-- Step 2: Clinic Information -->
+<div class="step-content" id="step-2">
+<h2 class="font-headline-md text-headline-md text-on-background mb-stack-md border-b border-surface-variant pb-stack-sm flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">local_hospital</span>
+                            Clinic Information
+                        </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="col-span-1 md:col-span-2">
+<label class="label-clinical" for="clinicName">Clinic/Practice Name</label>
+<input class="input-clinical" id="clinicName" placeholder="e.g., Advanced Dermatology Center" type="text"/>
+</div>
+<div class="col-span-1 md:col-span-2">
+<label class="label-clinical" for="address">Practice Address</label>
+<input class="input-clinical mb-2" id="address" placeholder="Street Address" type="text"/>
+<div class="grid grid-cols-2 gap-2">
+<input class="input-clinical" placeholder="City" type="text"/>
+<input class="input-clinical" placeholder="State/Province" type="text"/>
+</div>
+</div>
+<div>
+<label class="label-clinical" for="website">Clinic Website (Optional)</label>
+<input class="input-clinical" id="website" placeholder="https://" type="url"/>
+</div>
+<div>
+<label class="label-clinical" for="yearsPractice">Years in Practice</label>
+<input class="input-clinical" id="yearsPractice" min="0" placeholder="e.g., 10" type="number"/>
+</div>
+</div>
+<div class="mt-stack-md flex justify-between">
+<button class="bg-transparent border border-outline-variant text-on-surface font-label-caps text-label-caps px-8 py-3 rounded-DEFAULT hover:bg-surface-container transition-colors uppercase tracking-wider" onclick="prevStep(1)" type="button">Back</button>
+<button class="bg-on-background text-surface font-label-caps text-label-caps px-8 py-3 rounded-DEFAULT hover:opacity-90 transition-opacity uppercase tracking-wider" onclick="nextStep(3)" type="button">Next Step</button>
+</div>
+</div>
+<!-- Step 3: Account Preferences -->
+<div class="step-content" id="step-3">
+<h2 class="font-headline-md text-headline-md text-on-background mb-stack-md border-b border-surface-variant pb-stack-sm flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">tune</span>
+                            Account Preferences
+                        </h2>
+<div class="grid grid-cols-1 gap-gutter">
+<div>
+<label class="label-clinical">Primary Product Interest</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+<label class="relative flex cursor-pointer items-center justify-between rounded-lg border border-outline-variant/50 bg-surface-container-lowest p-4 shadow-sm hover:bg-surface-container transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+<div>
+<p class="font-label-caps text-label-caps text-on-background uppercase mb-1">TONEVA</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Advanced Depigmentation</p>
+</div>
+<input checked="" class="h-4 w-4 border-outline-variant text-primary focus:ring-primary" name="product_interest" type="radio" value="toneva"/>
+</label>
+<label class="relative flex cursor-pointer items-center justify-between rounded-lg border border-outline-variant/50 bg-surface-container-lowest p-4 shadow-sm hover:bg-surface-container transition-colors has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+<div>
+<p class="font-label-caps text-label-caps text-on-background uppercase mb-1">TRICHOVVA</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Clinical Hair Restoration</p>
+</div>
+<input class="h-4 w-4 border-outline-variant text-primary focus:ring-primary" name="product_interest" type="radio" value="trichovva"/>
+</label>
+</div>
+</div>
+<div>
+<label class="label-clinical" for="volume">Estimated Monthly Patient Volume (Relevant Indications)</label>
+<select class="input-clinical" id="volume">
+<option disabled="" selected="" value="">Select Volume</option>
+<option value="1-25">1 - 25 patients</option>
+<option value="26-50">26 - 50 patients</option>
+<option value="51-100">51 - 100 patients</option>
+<option value="100+">100+ patients</option>
+</select>
+</div>
+</div>
+<!-- Verification Notice -->
+<div class="mt-stack-md bg-surface-container p-4 rounded-DEFAULT border-l-2 border-primary flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5" style="font-variation-settings: 'FILL' 1;">security</span>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-background uppercase mb-1">Credential Verification</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">To maintain the exclusivity and clinical integrity of our network, all applications undergo a rigorous medical credential verification process. Please allow 48 hours for our medical liaison team to review your submission.</p>
+</div>
+</div>
+<div class="mt-stack-md flex justify-between">
+<button class="bg-transparent border border-outline-variant text-on-surface font-label-caps text-label-caps px-8 py-3 rounded-DEFAULT hover:bg-surface-container transition-colors uppercase tracking-wider" onclick="prevStep(2)" type="button">Back</button>
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-3 rounded-DEFAULT hover:bg-primary-container transition-colors uppercase tracking-wider shadow-sm" type="submit">Submit Application</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+<!-- Sidebar Section -->
+<aside class="w-full md:w-1/3 flex flex-col gap-stack-md mt-stack-lg md:mt-0">
+<!-- Image Context -->
+<div class="w-full h-64 rounded-lg bg-cover bg-center shadow-sm border border-surface-variant" data-alt="A close-up, high-fidelity macro shot of a clear, viscous dermatological serum dropping onto a sterile glass petri dish. The lighting is pristine, high-key clinical white, creating a luxurious and scientific mood. Deep slate shadows provide contrast. The aesthetic is modern, sterile, and premium, reflecting pharmaceutical precision." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAblyzymExPm8mujBkN04_pZzq7vmbNcp9Sq6D_gVl2VOe2kLnPtnwZu6I_VkPBiNconlJ8Sy0X8XJd-ums19PcvRCP5BuFbLLLdnbEN5I5tRJX1C9W2k0_HloBClL5yo1dDO0ueKP7h0yXJU3Aw7x7t-MbOBodDDwW0xsC4bdAnin9z9SmcCSUi8sEyPG8krzaOznlGcnXFJU40NyTCBK14qZHDRxMaKJpIxVEZwQe_SIxrwJw-j1sEBQC9dUhCssp2lg2kASJb0FC')"></div>
+<!-- Value Proposition -->
+<div class="bg-surface-container-low p-stack-md rounded-lg border border-outline-variant/30">
+<h3 class="font-headline-md text-headline-md text-on-background mb-stack-sm">Partnership Benefits</h3>
+<ul class="flex flex-col gap-4">
+<li class="flex items-start gap-3 pb-4 border-b border-outline-variant/20 last:border-0">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'FILL' 0;">workspace_premium</span>
+<div>
+<strong class="block font-label-caps text-label-caps text-on-background uppercase mb-1">Exclusive Professional Pricing</strong>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Access specialized tiered pricing structures reserved solely for verified clinical practitioners.</span>
+</div>
+</li>
+<li class="flex items-start gap-3 pb-4 border-b border-outline-variant/20 last:border-0">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'FILL' 0;">campaign</span>
+<div>
+<strong class="block font-label-caps text-label-caps text-on-background uppercase mb-1">Clinical Marketing Support</strong>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Receive premium patient education materials and co-branded digital assets for your practice.</span>
+</div>
+</li>
+<li class="flex items-start gap-3 pb-4 border-b border-outline-variant/20 last:border-0">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'FILL' 0;">support_agent</span>
+<div>
+<strong class="block font-label-caps text-label-caps text-on-background uppercase mb-1">Direct Medical Liaison</strong>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Priority access to our scientific team for protocol consultations and complex case discussions.</span>
+</div>
+</li>
+</ul>
+</div>
+</aside>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-low dark:bg-inverse-surface mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter px-margin-mobile md:px-margin-desktop py-stack-lg max-w-[1440px] mx-auto">
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface dark:text-inverse-on-surface mb-4">XOVVA</h4>
+<p class="font-body-md text-body-md text-on-surface dark:text-inverse-on-surface">© 2024 XOVVA Clinical Science. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap gap-4 md:justify-end">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Medical Disclaimer</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="/clinical-evidence.html">Clinical Data</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<script>
+        function nextStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+            // Show target step
+            document.getElementById(`step-${step}`).classList.add('active');
+            
+            // Update indicators and line
+            updateIndicators(step);
+        }
+
+        function prevStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
+            // Show target step
+            document.getElementById(`step-${step}`).classList.add('active');
+            
+            // Update indicators and line
+            updateIndicators(step);
+        }
+
+        function updateIndicators(currentStep) {
+            const line = document.getElementById('progress-line');
+            
+            // Reset all indicators
+            for(let i=1; i<=3; i++) {
+                const ind = document.getElementById(`indicator-${i}`);
+                ind.classList.remove('active', 'completed', 'border-primary', 'text-primary', 'border-primary-container', 'bg-primary-container', 'text-on-primary-container');
+                ind.classList.add('border-outline-variant/50', 'text-outline-variant', 'bg-surface-container-lowest');
+                ind.innerHTML = i;
+            }
+
+            // Set line width
+            if(currentStep === 1) line.style.width = '0%';
+            if(currentStep === 2) line.style.width = '50%';
+            if(currentStep === 3) line.style.width = '100%';
+
+            // Style previous steps as completed
+            for(let i=1; i<currentStep; i++) {
+                const ind = document.getElementById(`indicator-${i}`);
+                ind.classList.remove('border-outline-variant/50', 'text-outline-variant', 'bg-surface-container-lowest');
+                ind.classList.add('completed');
+                ind.innerHTML = `<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check</span>`;
+            }
+
+            // Style current step
+            const currentInd = document.getElementById(`indicator-${currentStep}`);
+            currentInd.classList.remove('border-outline-variant/50', 'text-outline-variant', 'bg-surface-container-lowest');
+            currentInd.classList.add('active');
+        }
+    </script>
+</body></html>
