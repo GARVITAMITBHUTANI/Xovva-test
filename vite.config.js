@@ -16,6 +16,8 @@ export default defineConfig({
         'register-clinic': resolve(__dirname, 'register-clinic.html'),
         'medical-disclaimer': resolve(__dirname, 'medical-disclaimer.html'),
         'contact-support': resolve(__dirname, 'contact-support.html'),
+        'privacy-policy': resolve(__dirname, 'privacy-policy.html'),
+        'ingredient-transparency': resolve(__dirname, 'ingredient-transparency.html'),
       },
     },
   },

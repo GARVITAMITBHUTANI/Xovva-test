@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>XOVVA - Ingredient Transparency</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f2f4f6",
+                        "primary": "#af2908",
+                        "on-secondary-fixed-variant": "#3e4754",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e6e8ea",
+                        "on-secondary-fixed": "#131c27",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#ffb4a3",
+                        "secondary-container": "#d7e0ef",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#b22b0b",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "primary-fixed-dim": "#ffb4a3",
+                        "surface-container-highest": "#e0e3e5",
+                        "primary-container": "#d24121",
+                        "on-tertiary-container": "#fdfcff",
+                        "secondary-fixed-dim": "#bec7d6",
+                        "on-surface-variant": "#5a413b",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#66768d",
+                        "secondary-fixed": "#dae3f2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-fixed": "#d3e4fe",
+                        "secondary": "#565f6c",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "background": "#f7f9fb",
+                        "on-surface": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#4d5d73",
+                        "surface-dim": "#d8dadc",
+                        "surface-container": "#eceef0",
+                        "outline-variant": "#e2bfb7",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#3d0600",
+                        "outline": "#8e7069",
+                        "on-background": "#191c1e",
+                        "primary-fixed": "#ffdad2",
+                        "surface": "#f7f9fb",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-variant": "#e0e3e5",
+                        "on-primary-fixed-variant": "#8b1a00",
+                        "on-primary-container": "#fffbff",
+                        "surface-bright": "#f7f9fb",
+                        "on-secondary-container": "#5a6370"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "4rem",
+                        "margin-mobile": "1rem",
+                        "stack-sm": "0.5rem",
+                        "margin-desktop": "5rem",
+                        "stack-md": "1.5rem",
+                        "gutter": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display", "serif"],
+                        "label-caps": ["Work Sans", "sans-serif"],
+                        "display-lg": ["Playfair Display", "serif"],
+                        "data-mono": ["Work Sans", "monospace"],
+                        "body-md": ["Work Sans", "sans-serif"],
+                        "headline-md": ["Playfair Display", "serif"],
+                        "headline-lg-mobile": ["Playfair Display", "serif"],
+                        "body-lg": ["Work Sans", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "data-mono": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 w-full bg-surface-container-lowest border-b border-surface-variant/20 shadow-none">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-full mx-auto">
+<a href="/index.html" class="font-headline-lg text-headline-lg tracking-tighter text-on-surface">
+                XOVVA
+            </a>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors uppercase" href="/toneva.html">TONEVA</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors uppercase" href="/trichovva.html">TRICHOVVA</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors uppercase" href="/clinical-evidence.html">Clinical Evidence</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors uppercase" href="/for-professionals.html">For Professionals</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col w-full">
+<!-- Hero Section -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-stack-lg border-b border-surface-variant/20 bg-surface">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7 space-y-6">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Scientific Disclosure</span>
+<h1 class="font-display-lg text-display-lg text-on-surface">Ingredient Transparency</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                        At XOVVA, clinical efficacy is driven by molecular precision. We disclose the exact active compounds, 
+                        delivery mechanisms, and rigorous scientific rationale behind every formulation in our TONEVA and TRICHOVVA protocols.
+                    </p>
+</div>
+<div class="md:col-span-5 h-[400px] w-full rounded-lg overflow-hidden bg-surface-container-high relative flex items-center justify-center">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-highest to-surface-container-low opacity-50"></div>
+<div class="w-full h-full bg-cover bg-center absolute inset-0 mix-blend-multiply opacity-80" data-alt="A highly macro, clinical photograph of a clear, viscous serum droplet suspended mid-air against a pristine white background. The lighting is intensely bright and analytical, casting crisp, minimal shadows. The aesthetic is sterile, modern, and pharmaceutical, emphasizing molecular purity and scientific precision." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAT2eHFrMVDojiFMyb7Mx1_nteRAGWFd5A_83x-E70Av5ijXRMA9KuiPay2-ZK1ML9eI-1Ac68CNBJyF4FKX-EpRt0yWpWlYPQ3PrysvOcFy0mxXKazf3YD_hda3H2vltq8s2oEAo0eaYvWgqFwk0dvaDVAG7Eo-Amak3CPrmZpYmdg_qcokfbmkPv4HJO4EQyBUAerdLAIWMy3lyBZYRw5wXZvwyUN0UX_XHTCxRmYZ3sZ_uzkh44n2YiU0BqRavm_1op81gVA3eJB')"></div>
+</div>
+</div>
+</section>
+<!-- Technical Ingredients Grid -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-stack-lg bg-surface-bright">
+<div class="max-w-7xl mx-auto space-y-12">
+<div class="flex items-center gap-4 border-b border-surface-variant/20 pb-4">
+<span class="material-symbols-outlined text-primary text-3xl">science</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Primary Active Compounds</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Ingredient 1 -->
+<div class="bg-surface-container-low p-8 rounded border border-surface-variant/30 flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+<div class="mb-6 flex justify-between items-start">
+<span class="font-label-caps text-label-caps bg-surface-dim text-on-surface-variant px-3 py-1 rounded-full uppercase">TONEVA Pathway</span>
+<span class="material-symbols-outlined text-outline">hub</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Liposomal Azelaic Acid</h3>
+<div class="font-data-mono text-data-mono text-primary mb-6">Conc: 15.0% w/w</div>
+<div class="space-y-4 flex-grow">
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Clinical Role</h4>
+<p class="font-body-md text-body-md text-on-surface">Tyrosinase inhibitor and anti-inflammatory agent targeting post-inflammatory hyperpigmentation and melasma.</p>
+</div>
+<hr class="border-surface-variant/40"/>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Mechanism of Action</h4>
+<p class="font-body-md text-body-md text-on-surface text-sm">Competitively inhibits tyrosinase in vitro, decreasing melanin synthesis in highly active melanocytes without affecting normal skin pigment.</p>
+</div>
+</div>
+</div>
+<!-- Ingredient 2 -->
+<div class="bg-surface-container-low p-8 rounded border border-surface-variant/30 flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+<div class="mb-6 flex justify-between items-start">
+<span class="font-label-caps text-label-caps bg-surface-dim text-on-surface-variant px-3 py-1 rounded-full uppercase">TONEVA Pathway</span>
+<span class="material-symbols-outlined text-outline">biotech</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Tranexamic Acid</h3>
+<div class="font-data-mono text-data-mono text-primary mb-6">Conc: 5.0% w/v</div>
+<div class="space-y-4 flex-grow">
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Clinical Role</h4>
+<p class="font-body-md text-body-md text-on-surface">Plasmin inhibitor preventing UV-induced pigmentation and vascular-driven erythema.</p>
+</div>
+<hr class="border-surface-variant/40"/>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Mechanism of Action</h4>
+<p class="font-body-md text-body-md text-on-surface text-sm">Blocks the interaction of melanocytes and keratinocytes by inhibiting plasminogen binding to the keratinocyte surface, reducing arachidonic acid and prostaglandins.</p>
+</div>
+</div>
+</div>
+<!-- Ingredient 3 -->
+<div class="bg-surface-container-low p-8 rounded border border-surface-variant/30 flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+<div class="mb-6 flex justify-between items-start">
+<span class="font-label-caps text-label-caps bg-surface-dim text-on-surface-variant px-3 py-1 rounded-full uppercase">TRICHOVVA Pathway</span>
+<span class="material-symbols-outlined text-outline">genetics</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Wnt/β-catenin Peptides</h3>
+<div class="font-data-mono text-data-mono text-primary mb-6">Proprietary Blend</div>
+<div class="space-y-4 flex-grow">
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Clinical Role</h4>
+<p class="font-body-md text-body-md text-on-surface">Follicular stem cell activator to prolong anagen phase and stimulate dermal papilla cells.</p>
+</div>
+<hr class="border-surface-variant/40"/>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Mechanism of Action</h4>
+<p class="font-body-md text-body-md text-on-surface text-sm">Upregulates Wnt10b expression in the dermal papilla, triggering the β-catenin signaling cascade essential for hair follicle neogenesis and cycling.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-dim mt-auto border-t border-outline-variant/10">
+<div class="px-margin-mobile md:px-margin-desktop py-stack-lg w-full max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-12">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md text-on-surface mb-4">
+                        XOVVA
+                    </div>
+</div>
+<div class="md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
+<a class="text-on-surface-variant font-label-caps text-label-caps uppercase hover:underline decoration-primary transition-all" href="/medical-disclaimer.html">Medical Disclaimer</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps uppercase hover:underline decoration-primary transition-all" href="/privacy-policy.html">Privacy Policy</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps uppercase hover:underline decoration-primary transition-all" href="/contact-support.html">Contact Support</a>
+<a class="text-primary font-bold font-label-caps text-label-caps uppercase hover:underline decoration-primary transition-all" href="/ingredient-transparency.html">Ingredient Transparency</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps uppercase hover:underline decoration-primary transition-all" href="/clinical-evidence.html">Clinical Data</a>
+</div>
+</div>
+<div class="border-t border-surface-variant/30 pt-6">
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">
+                    © 2024 XOVVA Pharmaceuticals. For licensed medical professional use only.
+                </p>
+</div>
+</div>
+</footer>
+</body></html>
