@@ -18,6 +18,7 @@ export default defineConfig({
         'contact-support': resolve(__dirname, 'contact-support.html'),
         'privacy-policy': resolve(__dirname, 'privacy-policy.html'),
         'ingredient-transparency': resolve(__dirname, 'ingredient-transparency.html'),
+        careers: resolve(__dirname, 'careers.html'),
       },
     },
   },
