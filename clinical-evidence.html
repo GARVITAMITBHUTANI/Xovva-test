@@ -314,63 +314,274 @@
 </div>
 </div>
 <!-- Document List -->
-<div class="flex flex-col gap-2">
-<!-- List Item 1 -->
-<div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md">
-<div class="flex items-start gap-4 mb-4 sm:mb-0">
-<div class="p-2 bg-surface-variant rounded text-on-surface-variant group-hover:text-primary transition-colors">
-<span class="material-symbols-outlined">description</span>
-</div>
-<div>
-<h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors">Efficacy of Novel Peptide Complex in Melasma Management</h4>
-<div class="flex items-center gap-2 mt-1">
-<span class="font-label-caps text-[10px] text-on-surface-variant">JOURNAL OF CLINICAL DERMATOLOGY</span>
-<span class="w-1 h-1 rounded-full bg-outline-variant/50"></span>
-<span class="font-data-mono text-[11px] text-on-surface-variant">OCT 2023</span>
-</div>
-</div>
-</div>
-<a href="/assets/pdf/clinical-study-1.pdf" target="_blank" class="px-4 py-2 text-on-surface border border-outline-variant/30 rounded hover:bg-surface-container-high transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center">Download PDF</a>
-</div>
-<!-- List Item 2 -->
-<div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md">
-<div class="flex items-start gap-4 mb-4 sm:mb-0">
-<div class="p-2 bg-surface-variant rounded text-on-surface-variant group-hover:text-primary transition-colors">
-<span class="material-symbols-outlined">description</span>
-</div>
-<div>
-<h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors">Anagen Phase Prolongation via Follicular Micro-Targeting</h4>
-<div class="flex items-center gap-2 mt-1">
-<span class="font-label-caps text-[10px] text-on-surface-variant">INTERNATIONAL TRICHOLOGY REVIEW</span>
-<span class="w-1 h-1 rounded-full bg-outline-variant/50"></span>
-<span class="font-data-mono text-[11px] text-on-surface-variant">JAN 2024</span>
-</div>
-</div>
-</div>
-<a href="/assets/pdf/clinical-study-2.pdf" target="_blank" class="px-4 py-2 text-on-surface border border-outline-variant/30 rounded hover:bg-surface-container-high transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center">Download PDF</a>
-</div>
-<!-- List Item 3 -->
-<div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md">
-<div class="flex items-start gap-4 mb-4 sm:mb-0">
-<div class="p-2 bg-surface-variant rounded text-on-surface-variant group-hover:text-primary transition-colors">
-<span class="material-symbols-outlined">description</span>
-</div>
-<div>
-<h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors">Safety Profile and Tolerability of High-Concentration Actives</h4>
-<div class="flex items-center gap-2 mt-1">
-<span class="font-label-caps text-[10px] text-on-surface-variant">AESTHETIC SCIENCE QUARTERLY</span>
-<span class="w-1 h-1 rounded-full bg-outline-variant/50"></span>
-<span class="font-data-mono text-[11px] text-on-surface-variant">AUG 2023</span>
-</div>
-</div>
-</div>
-<a href="/assets/pdf/clinical-study-3.pdf" target="_blank" class="px-4 py-2 text-on-surface border border-outline-variant/30 rounded hover:bg-surface-container-high transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center">Download PDF</a>
-</div>
-</div>
-<div class="flex justify-center mt-4">
-<a href="/clinical-evidence.html" class="text-primary font-label-caps text-label-caps hover:underline decoration-primary flex items-center gap-1">
-                        View All Publications <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-</a>
+<div class="flex flex-col gap-2" id="pdf-list">
+
+    <div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md pdf-item" data-title="${title.toLowerCase()}">
+        <div class="flex items-start gap-4 mb-4 sm:mb-0 w-full sm:w-auto">
+            <div class="p-2 bg-surface-variant rounded text-on-surface-variant group-hover:text-primary transition-colors shrink-0">
+                <span class="material-symbols-outlined">description</span>
+            </div>
+            <div>
+                <h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors max-w-xl leading-tight">${title}</h4>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="font-label-caps text-[10px] text-on-surface-variant">CLINICAL RESEARCH</span>
+                    <span class="w-1 h-1 rounded-full bg-outline-variant/50"></span>
+                    <span class="font-data-mono text-[11px] text-on-surface-variant">PDF DOCUMENT</span>
+                </div>
+            </div>
+        </div>
+        <a href="/clinical_studies/${encodedFile}" target="_blank" class="px-4 py-2 text-primary border border-outline-variant/30 rounded hover:bg-primary hover:text-on-primary hover:border-primary transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center shrink-0">
+            View PDF
+            <span class="material-symbols-outlined" style="font-size:16px;">open_in_new</span>
+        </a>
+    </div>
+    <div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md pdf-item" data-title="${title.toLowerCase()}">
+        <div class="flex items-start gap-4 mb-4 sm:mb-0 w-full sm:w-auto">
+            <div class="p-2 bg-surface-variant rounded text-on-surface-variant group-hover:text-primary transition-colors shrink-0">
+                <span class="material-symbols-outlined">description</span>
+            </div>
+            <div>
+                <h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors max-w-xl leading-tight">${title}</h4>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="font-label-caps text-[10px] text-on-surface-variant">CLINICAL RESEARCH</span>
+                    <span class="w-1 h-1 rounded-full bg-outline-variant/50"></span>
+                    <span class="font-data-mono text-[11px] text-on-surface-variant">PDF DOCUMENT</span>
+                </div>
+            </div>
+        </div>
+        <a href="/clinical_studies/${encodedFile}" target="_blank" class="px-4 py-2 text-primary border border-outline-variant/30 rounded hover:bg-primary hover:text-on-primary hover:border-primary transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center shrink-0">
+            View PDF
+            <span class="material-symbols-outlined" style="font-size:16px;">open_in_new</span>
+        </a>
+    </div>
+    <div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md pdf-item" data-title="${title.toLowerCase()}">
+        <div class="flex items-start gap-4 mb-4 sm:mb-0 w-full sm:w-auto">
+            <div class="p-2 bg-surface-variant rounded text-on-surface-variant group-hover:text-primary transition-colors shrink-0">
+                <span class="material-symbols-outlined">description</span>
+            </div>
+            <div>
+                <h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors max-w-xl leading-tight">${title}</h4>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="font-label-caps text-[10px] text-on-surface-variant">CLINICAL RESEARCH</span>
+                    <span class="w-1 h-1 rounded-full bg-outline-variant/50"></span>
+                    <span class="font-data-mono text-[11px] text-on-surface-variant">PDF DOCUMENT</span>
+                </div>
+            </div>
+        </div>
+        <a href="/clinical_studies/${encodedFile}" target="_blank" class="px-4 py-2 text-primary border border-outline-variant/30 rounded hover:bg-primary hover:text-on-primary hover:border-primary transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center shrink-0">
+            View PDF
+            <span class="material-symbols-outlined" style="font-size:16px;">open_in_new</span>
+        </a>
+    </div>
+    <div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md pdf-item" data-title="${title.toLowerCase()}">
+        <div class="flex items-start gap-4 mb-4 sm:mb-0 w-full sm:w-auto">
+            <div class="p-2 bg-surface-variant rounded text-on-surface-variant group-hover:text-primary transition-colors shrink-0">
+                <span class="material-symbols-outlined">description</span>
+            </div>
+            <div>
+                <h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors max-w-xl leading-tight">${title}</h4>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="font-label-caps text-[10px] text-on-surface-variant">CLINICAL RESEARCH</span>
+                    <span class="w-1 h-1 rounded-full bg-outline-variant/50"></span>
+                    <span class="font-data-mono text-[11px] text-on-surface-variant">PDF DOCUMENT</span>
+                </div>
+            </div>
+        </div>
+        <a href="/clinical_studies/${encodedFile}" target="_blank" class="px-4 py-2 text-primary border border-outline-variant/30 rounded hover:bg-primary hover:text-on-primary hover:border-primary transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center shrink-0">
+            View PDF
+            <span class="material-symbols-outlined" style="font-size:16px;">open_in_new</span>
+        </a>
+    </div>
+    <div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md pdf-item" data-title="${title.toLowerCase()}">
+        <div class="flex items-start gap-4 mb-4 sm:mb-0 w-full sm:w-auto">
+            <div class="p-2 bg-surface-variant rounded text-on-surface-variant group-hover:text-primary transition-colors shrink-0">
+                <span class="material-symbols-outlined">description</span>
+            </div>
+            <div>
+                <h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors max-w-xl leading-tight">${title}</h4>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="font-label-caps text-[10px] text-on-surface-variant">CLINICAL RESEARCH</span>
+                    <span class="w-1 h-1 rounded-full bg-outline-variant/50"></span>
+                    <span class="font-data-mono text-[11px] text-on-surface-variant">PDF DOCUMENT</span>
+                </div>
+            </div>
+        </div>
+        <a href="/clinical_studies/${encodedFile}" target="_blank" class="px-4 py-2 text-primary border border-outline-variant/30 rounded hover:bg-primary hover:text-on-primary hover:border-primary transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center shrink-0">
+            View PDF
+            <span class="material-symbols-outlined" style="font-size:16px;">open_in_new</span>
+        </a>
+    </div>
+    <div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md pdf-item" data-title="${title.toLowerCase()}">
+        <div class="flex items-start gap-4 mb-4 sm:mb-0 w-full sm:w-auto">
+            <div class="p-2 bg-surface-variant rounded text-on-surface-variant group-hover:text-primary transition-colors shrink-0">
+                <span class="material-symbols-outlined">description</span>
+            </div>
+            <div>
+                <h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors max-w-xl leading-tight">${title}</h4>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="font-label-caps text-[10px] text-on-surface-variant">CLINICAL RESEARCH</span>
+                    <span class="w-1 h-1 rounded-full bg-outline-variant/50"></span>
+                    <span class="font-data-mono text-[11px] text-on-surface-variant">PDF DOCUMENT</span>
+                </div>
+            </div>
+        </div>
+        <a href="/clinical_studies/${encodedFile}" target="_blank" class="px-4 py-2 text-primary border border-outline-variant/30 rounded hover:bg-primary hover:text-on-primary hover:border-primary transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center shrink-0">
+            View PDF
+            <span class="material-symbols-outlined" style="font-size:16px;">open_in_new</span>
+        </a>
+    </div>
+    <div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md pdf-item" data-title="${title.toLowerCase()}">
+        <div class="flex items-start gap-4 mb-4 sm:mb-0 w-full sm:w-auto">
+            <div class="p-2 bg-surface-variant rounded text-on-surface-variant group-hover:text-primary transition-colors shrink-0">
+                <span class="material-symbols-outlined">description</span>
+            </div>
+            <div>
+                <h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors max-w-xl leading-tight">${title}</h4>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="font-label-caps text-[10px] text-on-surface-variant">CLINICAL RESEARCH</span>
+                    <span class="w-1 h-1 rounded-full bg-outline-variant/50"></span>
+                    <span class="font-data-mono text-[11px] text-on-surface-variant">PDF DOCUMENT</span>
+                </div>
+            </div>
+        </div>
+        <a href="/clinical_studies/${encodedFile}" target="_blank" class="px-4 py-2 text-primary border border-outline-variant/30 rounded hover:bg-primary hover:text-on-primary hover:border-primary transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center shrink-0">
+            View PDF
+            <span class="material-symbols-outlined" style="font-size:16px;">open_in_new</span>
+        </a>
+    </div>
+    <div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md pdf-item" data-title="${title.toLowerCase()}">
+        <div class="flex items-start gap-4 mb-4 sm:mb-0 w-full sm:w-auto">
+            <div class="p-2 bg-surface-variant rounded text-on-surface-variant group-hover:text-primary transition-colors shrink-0">
+                <span class="material-symbols-outlined">description</span>
+            </div>
+            <div>
+                <h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors max-w-xl leading-tight">${title}</h4>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="font-label-caps text-[10px] text-on-surface-variant">CLINICAL RESEARCH</span>
+                    <span class="w-1 h-1 rounded-full bg-outline-variant/50"></span>
+                    <span class="font-data-mono text-[11px] text-on-surface-variant">PDF DOCUMENT</span>
+                </div>
+            </div>
+        </div>
+        <a href="/clinical_studies/${encodedFile}" target="_blank" class="px-4 py-2 text-primary border border-outline-variant/30 rounded hover:bg-primary hover:text-on-primary hover:border-primary transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center shrink-0">
+            View PDF
+            <span class="material-symbols-outlined" style="font-size:16px;">open_in_new</span>
+        </a>
+    </div>
+    <div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md pdf-item" data-title="${title.toLowerCase()}">
+        <div class="flex items-start gap-4 mb-4 sm:mb-0 w-full sm:w-auto">
+            <div class="p-2 bg-surface-variant rounded text-on-surface-variant group-hover:text-primary transition-colors shrink-0">
+                <span class="material-symbols-outlined">description</span>
+            </div>
+            <div>
+                <h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors max-w-xl leading-tight">${title}</h4>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="font-label-caps text-[10px] text-on-surface-variant">CLINICAL RESEARCH</span>
+                    <span class="w-1 h-1 rounded-full bg-outline-variant/50"></span>
+                    <span class="font-data-mono text-[11px] text-on-surface-variant">PDF DOCUMENT</span>
+                </div>
+            </div>
+        </div>
+        <a href="/clinical_studies/${encodedFile}" target="_blank" class="px-4 py-2 text-primary border border-outline-variant/30 rounded hover:bg-primary hover:text-on-primary hover:border-primary transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center shrink-0">
+            View PDF
+            <span class="material-symbols-outlined" style="font-size:16px;">open_in_new</span>
+        </a>
+    </div>
+    <div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md pdf-item" data-title="${title.toLowerCase()}">
+        <div class="flex items-start gap-4 mb-4 sm:mb-0 w-full sm:w-auto">
+            <div class="p-2 bg-surface-variant rounded text-on-surface-variant group-hover:text-primary transition-colors shrink-0">
+                <span class="material-symbols-outlined">description</span>
+            </div>
+            <div>
+                <h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors max-w-xl leading-tight">${title}</h4>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="font-label-caps text-[10px] text-on-surface-variant">CLINICAL RESEARCH</span>
+                    <span class="w-1 h-1 rounded-full bg-outline-variant/50"></span>
+                    <span class="font-data-mono text-[11px] text-on-surface-variant">PDF DOCUMENT</span>
+                </div>
+            </div>
+        </div>
+        <a href="/clinical_studies/${encodedFile}" target="_blank" class="px-4 py-2 text-primary border border-outline-variant/30 rounded hover:bg-primary hover:text-on-primary hover:border-primary transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center shrink-0">
+            View PDF
+            <span class="material-symbols-outlined" style="font-size:16px;">open_in_new</span>
+        </a>
+    </div>
+    <div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md pdf-item" data-title="${title.toLowerCase()}">
+        <div class="flex items-start gap-4 mb-4 sm:mb-0 w-full sm:w-auto">
+            <div class="p-2 bg-surface-variant rounded text-on-surface-variant group-hover:text-primary transition-colors shrink-0">
+                <span class="material-symbols-outlined">description</span>
+            </div>
+            <div>
+                <h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors max-w-xl leading-tight">${title}</h4>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="font-label-caps text-[10px] text-on-surface-variant">CLINICAL RESEARCH</span>
+                    <span class="w-1 h-1 rounded-full bg-outline-variant/50"></span>
+                    <span class="font-data-mono text-[11px] text-on-surface-variant">PDF DOCUMENT</span>
+                </div>
+            </div>
+        </div>
+        <a href="/clinical_studies/${encodedFile}" target="_blank" class="px-4 py-2 text-primary border border-outline-variant/30 rounded hover:bg-primary hover:text-on-primary hover:border-primary transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center shrink-0">
+            View PDF
+            <span class="material-symbols-outlined" style="font-size:16px;">open_in_new</span>
+        </a>
+    </div>
+    <div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md pdf-item" data-title="${title.toLowerCase()}">
+        <div class="flex items-start gap-4 mb-4 sm:mb-0 w-full sm:w-auto">
+            <div class="p-2 bg-surface-variant rounded text-on-surface-variant group-hover:text-primary transition-colors shrink-0">
+                <span class="material-symbols-outlined">description</span>
+            </div>
+            <div>
+                <h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors max-w-xl leading-tight">${title}</h4>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="font-label-caps text-[10px] text-on-surface-variant">CLINICAL RESEARCH</span>
+                    <span class="w-1 h-1 rounded-full bg-outline-variant/50"></span>
+                    <span class="font-data-mono text-[11px] text-on-surface-variant">PDF DOCUMENT</span>
+                </div>
+            </div>
+        </div>
+        <a href="/clinical_studies/${encodedFile}" target="_blank" class="px-4 py-2 text-primary border border-outline-variant/30 rounded hover:bg-primary hover:text-on-primary hover:border-primary transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center shrink-0">
+            View PDF
+            <span class="material-symbols-outlined" style="font-size:16px;">open_in_new</span>
+        </a>
+    </div>
+    <div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md pdf-item" data-title="${title.toLowerCase()}">
+        <div class="flex items-start gap-4 mb-4 sm:mb-0 w-full sm:w-auto">
+            <div class="p-2 bg-surface-variant rounded text-on-surface-variant group-hover:text-primary transition-colors shrink-0">
+                <span class="material-symbols-outlined">description</span>
+            </div>
+            <div>
+                <h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors max-w-xl leading-tight">${title}</h4>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="font-label-caps text-[10px] text-on-surface-variant">CLINICAL RESEARCH</span>
+                    <span class="w-1 h-1 rounded-full bg-outline-variant/50"></span>
+                    <span class="font-data-mono text-[11px] text-on-surface-variant">PDF DOCUMENT</span>
+                </div>
+            </div>
+        </div>
+        <a href="/clinical_studies/${encodedFile}" target="_blank" class="px-4 py-2 text-primary border border-outline-variant/30 rounded hover:bg-primary hover:text-on-primary hover:border-primary transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center shrink-0">
+            View PDF
+            <span class="material-symbols-outlined" style="font-size:16px;">open_in_new</span>
+        </a>
+    </div>
+    <div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md pdf-item" data-title="${title.toLowerCase()}">
+        <div class="flex items-start gap-4 mb-4 sm:mb-0 w-full sm:w-auto">
+            <div class="p-2 bg-surface-variant rounded text-on-surface-variant group-hover:text-primary transition-colors shrink-0">
+                <span class="material-symbols-outlined">description</span>
+            </div>
+            <div>
+                <h4 class="font-body-md text-body-md font-semibold text-on-surface group-hover:text-primary transition-colors max-w-xl leading-tight">${title}</h4>
+                <div class="flex items-center gap-2 mt-1">
+                    <span class="font-label-caps text-[10px] text-on-surface-variant">CLINICAL RESEARCH</span>
+                    <span class="w-1 h-1 rounded-full bg-outline-variant/50"></span>
+                    <span class="font-data-mono text-[11px] text-on-surface-variant">PDF DOCUMENT</span>
+                </div>
+            </div>
+        </div>
+        <a href="/clinical_studies/${encodedFile}" target="_blank" class="px-4 py-2 text-primary border border-outline-variant/30 rounded hover:bg-primary hover:text-on-primary hover:border-primary transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center shrink-0">
+            View PDF
+            <span class="material-symbols-outlined" style="font-size:16px;">open_in_new</span>
+        </a>
+    </div>
 </div>
 </div>
 </section>
