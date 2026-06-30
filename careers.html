@@ -144,22 +144,59 @@
 <div class="w-full space-y-6">
     <div class="bg-surface-container-lowest p-6 md:p-8 border border-surface-variant/30 rounded-lg shadow-sm flex flex-col md:flex-row justify-between md:items-center">
         <div>
-            <h3 class="font-headline-md text-headline-md text-on-surface">Clinical Research Scientist</h3>
+            <h3 class="font-headline-md text-headline-md text-on-surface">National Sales Coordinator</h3>
             <p class="font-body-md text-body-md text-on-surface-variant mt-2">New York, NY (Hybrid)</p>
         </div>
-        <a href="mailto:careers@xovva.com" class="mt-4 md:mt-0 bg-primary hover:bg-primary-container text-on-primary font-label-caps text-label-caps px-6 py-3 rounded uppercase tracking-widest transition-colors inline-flex items-center justify-center space-x-2">
+        <a href="#apply-form" class="mt-4 md:mt-0 bg-primary hover:bg-primary-container text-on-primary font-label-caps text-label-caps px-6 py-3 rounded uppercase tracking-widest transition-colors inline-flex items-center justify-center space-x-2">
             <span>Apply Now</span>
         </a>
     </div>
 
     <div class="bg-surface-container-lowest p-6 md:p-8 border border-surface-variant/30 rounded-lg shadow-sm flex flex-col md:flex-row justify-between md:items-center">
         <div>
-            <h3 class="font-headline-md text-headline-md text-on-surface">Medical Sales Representative</h3>
-            <p class="font-body-md text-body-md text-on-surface-variant mt-2">Los Angeles, CA (Remote)</p>
+            <h3 class="font-headline-md text-headline-md text-on-surface">Key Account Manager</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-2">Delhi, Mumbai, Bangalore</p>
         </div>
-        <a href="mailto:careers@xovva.com" class="mt-4 md:mt-0 bg-primary hover:bg-primary-container text-on-primary font-label-caps text-label-caps px-6 py-3 rounded uppercase tracking-widest transition-colors inline-flex items-center justify-center space-x-2">
+        <a href="#apply-form" class="mt-4 md:mt-0 bg-primary hover:bg-primary-container text-on-primary font-label-caps text-label-caps px-6 py-3 rounded uppercase tracking-widest transition-colors inline-flex items-center justify-center space-x-2">
             <span>Apply Now</span>
         </a>
+    </div>
+
+    <!-- Application Form -->
+    <div id="apply-form" data-aos="fade-up" class="mt-stack-lg bg-surface-container-lowest p-8 border border-surface-variant/30 rounded-lg shadow-sm">
+        <h2 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-surface-variant/20 pb-4">Application Form</h2>
+        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <label class="font-label-caps text-label-caps text-on-surface-variant" for="fullName">FULL NAME</label>
+                    <input type="text" id="fullName" name="fullName" required class="w-full bg-surface-container-low border border-surface-variant/50 rounded px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors">
+                </div>
+                <div class="space-y-2">
+                    <label class="font-label-caps text-label-caps text-on-surface-variant" for="email">EMAIL ADDRESS</label>
+                    <input type="email" id="email" name="email" required class="w-full bg-surface-container-low border border-surface-variant/50 rounded px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors">
+                </div>
+                <div class="space-y-2">
+                    <label class="font-label-caps text-label-caps text-on-surface-variant" for="role">POSITION APPLYING FOR</label>
+                    <select id="role" name="role" required class="w-full bg-surface-container-low border border-surface-variant/50 rounded px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors">
+                        <option value="">Select a position...</option>
+                        <option value="National Sales Coordinator">National Sales Coordinator</option>
+                        <option value="Key Account Manager">Key Account Manager</option>
+                    </select>
+                </div>
+                <div class="space-y-2">
+                    <label class="font-label-caps text-label-caps text-on-surface-variant" for="linkedin">LINKEDIN PROFILE URL</label>
+                    <input type="url" id="linkedin" name="linkedin" class="w-full bg-surface-container-low border border-surface-variant/50 rounded px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors">
+                </div>
+            </div>
+            <div class="space-y-2">
+                <label class="font-label-caps text-label-caps text-on-surface-variant" for="coverLetter">COVER LETTER / MESSAGE</label>
+                <textarea id="coverLetter" name="coverLetter" rows="4" required class="w-full bg-surface-container-low border border-surface-variant/50 rounded px-4 py-3 text-on-surface focus:outline-none focus:border-primary transition-colors resize-none"></textarea>
+            </div>
+            <button type="submit" class="bg-primary text-on-primary w-full py-4 rounded font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary-container transition-colors">
+                SUBMIT APPLICATION
+            </button>
+        </form>
     </div>
 </div>
 </main>
@@ -173,16 +210,16 @@
 </div>
 <div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 <div class="flex flex-col space-y-3">
-<a class="font-label-caps text-label-caps text-on-surface-variant hover:underline decoration-primary transition-all" href="/medical-disclaimer.html">Medical Disclaimer</a>
-<a class="font-label-caps text-label-caps text-on-surface-variant hover:underline decoration-primary transition-all" href="/privacy-policy.html">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all font-body-md text-body-md" href="/medical-disclaimer.html">Medical Disclaimer</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all font-body-md text-body-md" href="/privacy-policy.html">Privacy Policy</a>
 </div>
 <div class="flex flex-col space-y-3">
-<a class="font-label-caps text-label-caps text-on-surface-variant hover:underline decoration-primary transition-all" href="/contact-support.html">Contact Support</a>
-<a class="font-label-caps text-label-caps text-on-surface-variant hover:underline decoration-primary transition-all" href="/ingredient-transparency.html">Ingredient Transparency</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all font-body-md text-body-md" href="/contact-support.html">Contact Support</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all font-body-md text-body-md" href="/ingredient-transparency.html">Ingredient Transparency</a>
 </div>
 <div class="flex flex-col space-y-3">
-<a class="font-label-caps text-label-caps text-on-surface-variant hover:underline decoration-primary transition-all" href="/clinical-evidence.html">Clinical Data</a>
-<a class="font-label-caps text-label-caps text-on-surface-variant hover:underline decoration-primary transition-all" href="/careers.html">Careers</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all font-body-md text-body-md" href="/clinical-evidence.html">Clinical Data</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:underline decoration-primary transition-all font-body-md text-body-md" href="/careers.html">Careers</a>
 </div>
 </div>
 </div>
