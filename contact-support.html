@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en"><head>
+<html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>XOVVA - Medical Affairs &amp; Support</title>
@@ -103,6 +103,7 @@
         body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
     </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="min-h-screen flex flex-col font-body-md text-body-md bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
 <!-- TopNavBar -->
@@ -127,7 +128,7 @@
 <!-- Main Content Canvas -->
 <main class="flex-grow flex flex-col items-center w-full py-stack-lg px-margin-mobile md:px-margin-desktop space-y-stack-lg max-w-7xl mx-auto">
 <!-- Hero Section -->
-<section class="w-full text-center max-w-3xl mx-auto space-y-stack-sm">
+<section data-aos="fade-up" class="w-full text-center max-w-3xl mx-auto space-y-stack-sm">
 <h1 class="font-display-lg text-display-lg text-on-surface">Medical Affairs &amp; Support</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant">Dedicated clinical and logistical support for licensed dermatologists and aesthetic practitioners utilizing XOVVA protocols.</p>
 </section>
@@ -136,7 +137,7 @@
 <!-- Contact Form Area (Takes 8 columns on large screens) -->
 <div class="lg:col-span-8 bg-surface-container-lowest p-8 md:p-12 border border-surface-variant/30 rounded-lg shadow-sm">
 <h2 class="font-headline-md text-headline-md text-on-surface mb-8 border-b border-surface-variant/20 pb-4">Professional Inquiry Form</h2>
-<form class="space-y-6">
+<form action="https://formspree.io/f/your_form_id" method="POST" class="space-y-6">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <!-- Full Name -->
 <div class="space-y-2">
@@ -262,4 +263,6 @@
 </div>
 </div>
 </footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, once: true, offset: 50 });</script>
 </body></html>

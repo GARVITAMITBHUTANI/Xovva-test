@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en"><head>
+<html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>TRICHOVVA™ - Clinical Hair Science</title>
@@ -108,6 +108,7 @@
             font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
     </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="bg-surface-container-lowest text-on-surface font-body-md antialiased selection:bg-primary/20">
 <!-- TopNavBar -->
@@ -173,7 +174,7 @@
 </div>
 </header>
 <!-- Technical Specs Section (Bento Grid) -->
-<section class="bg-surface py-stack-lg px-margin-mobile md:px-margin-desktop border-t border-outline-variant/10">
+<section data-aos="fade-up" class="bg-surface py-stack-lg px-margin-mobile md:px-margin-desktop border-t border-outline-variant/10">
 <div class="max-w-7xl mx-auto">
 <div class="text-center mb-12">
 <h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Active Formulation</h3>
@@ -181,7 +182,7 @@
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
 <!-- Spec Card 1 -->
-<div class="bg-surface-container-lowest p-8 border border-outline-variant/20 rounded-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div data-aos="fade-up" class="bg-surface-container-lowest p-8 border border-outline-variant/20 rounded-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
 <div>
 <div class="flex justify-between items-start mb-6">
 <span class="font-data-mono text-data-mono text-primary bg-primary/10 px-3 py-1 rounded">5.0%</span>
@@ -192,7 +193,7 @@
 </div>
 </div>
 <!-- Spec Card 2 -->
-<div class="bg-surface-container-lowest p-8 border border-outline-variant/20 rounded-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div data-aos="fade-up" class="bg-surface-container-lowest p-8 border border-outline-variant/20 rounded-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
 <div>
 <div class="flex justify-between items-start mb-6">
 <span class="font-label-caps text-label-caps text-secondary bg-surface-variant px-3 py-1 rounded uppercase">Botanical Ext.</span>
@@ -203,7 +204,7 @@
 </div>
 </div>
 <!-- Spec Card 3 -->
-<div class="bg-surface-container-lowest p-8 border border-outline-variant/20 rounded-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div data-aos="fade-up" class="bg-surface-container-lowest p-8 border border-outline-variant/20 rounded-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
 <div>
 <div class="flex justify-between items-start mb-6">
 <span class="font-label-caps text-label-caps text-secondary bg-surface-variant px-3 py-1 rounded uppercase">Building Blocks</span>
@@ -217,7 +218,7 @@
 </div>
 </section>
 <!-- Mechanism of Action -->
-<section class="bg-surface-container-lowest py-stack-lg px-margin-mobile md:px-margin-desktop">
+<section data-aos="fade-up" class="bg-surface-container-lowest py-stack-lg px-margin-mobile md:px-margin-desktop">
 <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-margin-desktop items-center">
 <div class="order-2 md:order-1 relative h-96 bg-surface-container rounded-lg overflow-hidden border border-outline-variant/20 flex items-center justify-center">
 <!-- Abstract placeholder for scientific diagram -->
@@ -272,4 +273,6 @@
 <a class="font-label-caps text-label-caps text-on-surface-variant hover:underline decoration-primary transition-all" href="/careers.html">Careers</a>
 </div>
 </footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, once: true, offset: 50 });</script>
 </body></html>

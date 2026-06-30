@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
+<html class="light scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>XOVVA - Professional Partnership Enrollment</title>
@@ -139,6 +139,7 @@
             background: theme('colors.outline');
         }
     </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="bg-background text-on-background min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
 <!-- TopNavBar -->
@@ -162,7 +163,7 @@
 <!-- Main Form Area -->
 <div class="w-full md:w-2/3 flex flex-col gap-stack-lg">
 <!-- Hero Section -->
-<section class="max-w-2xl">
+<section data-aos="fade-up" class="max-w-2xl">
 <h1 class="font-display-lg text-display-lg text-on-background mb-stack-sm md:font-display-lg font-headline-lg-mobile text-headline-lg-mobile md:text-display-lg">Professional Partnership Enrollment</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant">Join an exclusive network of clinical experts. Provide your credentials to access our pharmaceutical-grade dermatological formulations and dedicated professional support.</p>
 </section>
@@ -185,7 +186,7 @@
 <span class="font-label-caps text-label-caps text-outline-variant hidden md:block">Preferences</span>
 </div>
 </div>
-<form id="registration-form" onsubmit="event.preventDefault();">
+<form id="registration-form" action="https://formspree.io/f/your_form_id" method="POST">
 <!-- Step 1: Practitioner Details -->
 <div class="step-content active" id="step-1">
 <h2 class="font-headline-md text-headline-md text-on-background mb-stack-md border-b border-surface-variant pb-stack-sm">Practitioner Details</h2>
@@ -403,4 +404,6 @@
             currentInd.classList.add('active');
         }
     </script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, once: true, offset: 50 });</script>
 </body></html>

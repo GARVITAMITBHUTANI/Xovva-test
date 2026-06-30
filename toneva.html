@@ -109,6 +109,7 @@
             }
         }
     </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
 <!-- TopNavBar -->
@@ -140,7 +141,7 @@
 </header>
 <main>
 <!-- Hero Section -->
-<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop py-stack-lg min-h-[80vh] items-center">
+<section data-aos="fade-up" class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop py-stack-lg min-h-[80vh] items-center">
 <!-- Product Imagery -->
 <div class="md:col-span-6 bg-surface-container rounded-lg p-8 flex justify-center items-center h-full min-h-[400px]">
 <img alt="TONEVA Depigmentation Face Serum Product Image" class="max-w-full max-h-[600px] object-contain drop-shadow-2xl" src="/Toneva%20image%20for%20website%202.jpeg"/>
@@ -184,26 +185,26 @@
 </div>
 </section>
 <!-- Professional Benefits Bento Grid -->
-<section class="bg-surface-container-low px-margin-mobile md:px-margin-desktop py-stack-lg">
+<section data-aos="fade-up" class="bg-surface-container-low px-margin-mobile md:px-margin-desktop py-stack-lg">
 <div class="max-w-3xl mb-stack-md">
 <h2 class="font-headline-md text-headline-md text-on-surface mb-4">Triple Action Clinical Efficacy</h2>
 <p class="font-body-md text-body-md text-on-surface-variant">Designed for aesthetic practitioners, TONEVA delivers targeted results through a multi-pathway approach to melanin regulation.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
 <!-- Card 1 -->
-<div class="bg-surface-container-lowest p-8 border border-surface-variant/30 rounded-lg shadow-sm flex flex-col space-y-4 hover:shadow-md transition-shadow">
+<div data-aos="fade-up" class="bg-surface-container-lowest p-8 border border-surface-variant/30 rounded-lg shadow-sm flex flex-col space-y-4 hover:shadow-md transition-shadow">
 <span class="material-symbols-outlined text-primary text-3xl">target</span>
 <h3 class="font-headline-md text-headline-md text-on-surface text-lg">Melasma Reduction</h3>
 <p class="font-body-md text-body-md text-on-surface-variant">Specifically targets stubborn epidermal pigmentation by inhibiting tyrosinase activity and interrupting melanin transfer.</p>
 </div>
 <!-- Card 2 -->
-<div class="bg-surface-container-lowest p-8 border border-surface-variant/30 rounded-lg shadow-sm flex flex-col space-y-4 hover:shadow-md transition-shadow">
+<div data-aos="fade-up" class="bg-surface-container-lowest p-8 border border-surface-variant/30 rounded-lg shadow-sm flex flex-col space-y-4 hover:shadow-md transition-shadow">
 <span class="material-symbols-outlined text-primary text-3xl">blur_on</span>
 <h3 class="font-headline-md text-headline-md text-on-surface text-lg">Dark Spot Correction</h3>
 <p class="font-body-md text-body-md text-on-surface-variant">Accelerates cellular turnover to fade existing hyperpigmentation, including PIH from acne and photo-damage.</p>
 </div>
 <!-- Card 3 -->
-<div class="bg-surface-container-lowest p-8 border border-surface-variant/30 rounded-lg shadow-sm flex flex-col space-y-4 hover:shadow-md transition-shadow">
+<div data-aos="fade-up" class="bg-surface-container-lowest p-8 border border-surface-variant/30 rounded-lg shadow-sm flex flex-col space-y-4 hover:shadow-md transition-shadow">
 <span class="material-symbols-outlined text-primary text-3xl">flare</span>
 <h3 class="font-headline-md text-headline-md text-on-surface text-lg">360° Radiance</h3>
 <p class="font-body-md text-body-md text-on-surface-variant">Enhances overall dermal luminosity and evens skin texture, providing a comprehensive brightening effect.</p>
@@ -211,7 +212,7 @@
 </div>
 </section>
 <!-- Technical Specs / Formula Breakdown -->
-<section class="px-margin-mobile md:px-margin-desktop py-stack-lg" id="formula">
+<section data-aos="fade-up" class="px-margin-mobile md:px-margin-desktop py-stack-lg" id="formula">
 <div class="flex flex-col md:flex-row gap-gutter">
 <div class="md:w-1/3 pr-8">
 <h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-6">Active Ingredient Profile</h2>
@@ -282,7 +283,7 @@
 </div>
 </section>
 <!-- Lifestyle / Clinical Environment Image Section -->
-<section class="w-full h-96 relative mt-stack-md">
+<section data-aos="fade-up" class="w-full h-96 relative mt-stack-md">
 <div class="bg-cover bg-center bg-no-repeat w-full h-full absolute inset-0" data-alt="A pristine, highly sterile modern dermatological clinic room in bright, cool white lighting. A sleek stainless steel tray holds minimal, elegant pharmaceutical glass droppers. The aesthetic is clinical luxury, utilizing deep slate shadows against pure white surfaces with an air of sophisticated medical authority. Soft focus depth of field." style="background-image: url('/Toneva%20image%20for%20website%203.jpeg')"></div>
 <div class="absolute inset-0 bg-surface/40 backdrop-blur-[2px]"></div>
 </section>
@@ -311,4 +312,6 @@
 </div>
 </div>
 </footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, once: true, offset: 50 });</script>
 </body></html>

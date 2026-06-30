@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
+<html class="light scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>XOVVA - Clinical Evidence</title>
@@ -118,6 +118,7 @@
             box-shadow: 0 4px 24px rgba(25, 28, 30, 0.04);
         }
     </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="antialiased min-h-screen flex flex-col relative overflow-x-hidden">
 <!-- TopNavBar -->
@@ -151,7 +152,7 @@
 <!-- Main Content Canvas -->
 <main class="flex-grow flex flex-col w-full">
 <!-- Hero Section -->
-<section class="relative w-full min-h-[716px] flex items-center justify-start px-margin-mobile md:px-margin-desktop py-stack-lg bg-surface overflow-hidden">
+<section data-aos="fade-up" class="relative w-full min-h-[716px] flex items-center justify-start px-margin-mobile md:px-margin-desktop py-stack-lg bg-surface overflow-hidden">
 <!-- Scientific Background Image -->
 <div class="absolute inset-0 z-0 opacity-40 mix-blend-multiply pointer-events-none">
 <div class="w-full h-full bg-cover bg-center" data-alt="A highly detailed, ultra-high-resolution microscopic view of cellular structures, resembling human hair follicles or epidermis. The image is bathed in soft, clinical white and cool grey lighting, creating a sterile, laboratory aesthetic. The cells have a subtle, translucent quality with extremely shallow depth of field, blurring the edges to focus on sharp central details. The overall mood is hyper-modern, scientific, and premium." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDAWWbM8Jz9SUV-WXE9h0KiQzC-Mk1Sn7v9R62Mg8eJPjVJ23LvHOrv6PjRNVqGfwy1bs-AeljvQIH2xW6n1mkMozH0K8ygwhr-nc8N5XjDx1JctaK1isMSroe5ArTFvt42e3C6OSk6F6n_pWGy_Au3xRwOmmphjaecEF-GKi8fyeqRzNPgKPfsa41JqdnoTQOiDfSeXi7Y2o_ZPB5QqBs7TPSgzl_Vgkwu1adtkmCf3aGsGMzRzYxiHTMNrmuJEV4FdtU8Jz3xUDDS')"></div>
@@ -174,7 +175,7 @@
 </div>
 </section>
 <!-- Clinical Study Summaries -->
-<section class="w-full px-margin-mobile md:px-margin-desktop py-stack-lg bg-surface-container-lowest relative">
+<section data-aos="fade-up" class="w-full px-margin-mobile md:px-margin-desktop py-stack-lg bg-surface-container-lowest relative">
 <div class="max-w-7xl mx-auto flex flex-col gap-stack-lg">
 <div class="text-center flex flex-col gap-4 items-center mb-8">
 <h2 class="font-headline-lg text-headline-lg text-on-surface">In-Vivo Trial Outcomes</h2>
@@ -294,7 +295,7 @@
 </div>
 </section>
 <!-- Library Section -->
-<section class="w-full px-margin-mobile md:px-margin-desktop py-stack-lg bg-surface-container-high border-t border-outline-variant/20">
+<section data-aos="fade-up" class="w-full px-margin-mobile md:px-margin-desktop py-stack-lg bg-surface-container-high border-t border-outline-variant/20">
 <div class="max-w-5xl mx-auto flex flex-col gap-8">
 <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-6">
 <div>
@@ -324,10 +325,6 @@
 </div>
 </div>
 </div>
-<a href="/contact-support.html" class="px-4 py-2 text-on-surface border border-outline-variant/30 rounded hover:bg-surface-container-high transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center">
-                            Download PDF
-                        </a>
-</div>
 <!-- List Item 2 -->
 <div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md">
 <div class="flex items-start gap-4 mb-4 sm:mb-0">
@@ -343,10 +340,6 @@
 </div>
 </div>
 </div>
-<a href="/contact-support.html" class="px-4 py-2 text-on-surface border border-outline-variant/30 rounded hover:bg-surface-container-high transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center">
-                            Download PDF
-                        </a>
-</div>
 <!-- List Item 3 -->
 <div class="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-surface-container-lowest hover:bg-surface border border-outline-variant/10 rounded-lg transition-colors cursor-pointer shadow-sm hover:shadow-md">
 <div class="flex items-start gap-4 mb-4 sm:mb-0">
@@ -361,10 +354,6 @@
 <span class="font-data-mono text-[11px] text-on-surface-variant">AUG 2023</span>
 </div>
 </div>
-</div>
-<a href="/contact-support.html" class="px-4 py-2 text-on-surface border border-outline-variant/30 rounded hover:bg-surface-container-high transition-colors flex items-center gap-2 font-label-caps text-label-caps w-full sm:w-auto justify-center">
-                            Download PDF
-                        </a>
 </div>
 </div>
 <div class="flex justify-center mt-4">
@@ -402,4 +391,6 @@
 </div>
 </div>
 </footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, once: true, offset: 50 });</script>
 </body></html>

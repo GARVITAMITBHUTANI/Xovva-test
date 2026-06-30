@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en"><head>
+<html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>XOVVA - Careers</title>
@@ -103,6 +103,7 @@
         body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
     </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="min-h-screen flex flex-col font-body-md text-body-md bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
 <!-- TopNavBar -->
@@ -126,7 +127,7 @@
 </nav>
 
 <main class="flex-grow flex flex-col items-center w-full py-stack-lg px-margin-mobile md:px-margin-desktop space-y-stack-lg max-w-7xl mx-auto">
-<section class="w-full text-center max-w-3xl mx-auto space-y-stack-sm">
+<section data-aos="fade-up" class="w-full text-center max-w-3xl mx-auto space-y-stack-sm">
 <h1 class="font-display-lg text-display-lg text-on-surface">Careers at XOVVA</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant">Join our mission to revolutionize clinical dermatology through rigorous science and aesthetic excellence. We are always looking for visionary talent.</p>
 </section>
@@ -177,4 +178,6 @@
 </div>
 </div>
 </footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, once: true, offset: 50 });</script>
 </body></html>
