@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Practitioner Portal — Application Under Review | XOVVA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f2f4f6",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-container": "#eceef0",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "primary": "#af2908",
+                    "on-surface-variant": "#5a413b",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#dae3f2",
+                    "primary-container": "#d24121",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#66768d",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#3e4754",
+                    "primary-fixed-dim": "#ffb4a3",
+                    "on-primary-container": "#fffbff",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#f7f9fb",
+                    "surface": "#f7f9fb",
+                    "primary-fixed": "#ffdad2",
+                    "surface-variant": "#e0e3e5",
+                    "on-error": "#ffffff",
+                    "surface-container-highest": "#e0e3e5",
+                    "secondary-fixed-dim": "#bec7d6",
+                    "surface-dim": "#d8dadc",
+                    "on-primary-fixed-variant": "#8b1a00",
+                    "secondary": "#565f6c",
+                    "on-primary-fixed": "#3d0600",
+                    "outline": "#8e7069",
+                    "surface-tint": "#b22b0b",
+                    "inverse-primary": "#ffb4a3",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "inverse-on-surface": "#eff1f3",
+                    "inverse-surface": "#2d3133",
+                    "on-tertiary-container": "#fdfcff",
+                    "background": "#f7f9fb",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#d3e4fe",
+                    "tertiary": "#4d5d73",
+                    "outline-variant": "#e2bfb7",
+                    "on-secondary-fixed": "#131c27",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#191c1e",
+                    "on-background": "#191c1e",
+                    "secondary-container": "#d7e0ef",
+                    "on-secondary-container": "#5a6370"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-md": "1.5rem",
+                    "stack-lg": "4rem",
+                    "margin-desktop": "5rem",
+                    "stack-sm": "0.5rem",
+                    "margin-mobile": "1rem",
+                    "gutter": "1.5rem"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-lg": ["Work Sans"],
+                    "label-caps": ["Work Sans"],
+                    "data-mono": ["Work Sans"],
+                    "body-md": ["Work Sans"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                    "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                    "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                    "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                    "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                    "data-mono": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                    "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { background-color: #f7f9fb; color: #191c1e; }
+    </style>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+<!-- Prototype state toggle -->
+<div class="bg-inverse-surface text-inverse-on-surface">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-2 flex items-center justify-center gap-3">
+<span class="font-label-caps text-[10px] uppercase tracking-widest text-inverse-on-surface/60">Prototype preview</span>
+<div class="inline-flex items-center rounded-full bg-white/10 p-0.5">
+<a href="portal.html" class="px-3.5 py-1 rounded-full bg-white text-on-surface font-label-caps text-[11px] uppercase tracking-wider">Pending</a>
+<a href="portal-catalog.html" class="px-3.5 py-1 rounded-full font-label-caps text-[11px] uppercase tracking-wider text-inverse-on-surface/80 hover:text-inverse-on-surface transition-colors">Approved</a>
+</div>
+</div>
+</div>
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest w-full z-50 sticky top-0 border-b border-surface-variant/30">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-[1440px] mx-auto gap-6">
+<!-- Brand Logo -->
+<a href="index.html" class="flex items-center shrink-0" aria-label="XOVVA home">
+<img src="xovva-logo.png" alt="XOVVA" class="h-7 md:h-8 w-auto object-contain"/>
+</a>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex items-center gap-8">
+<div class="relative group">
+<button class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors uppercase flex items-center gap-1">Products<span class="material-symbols-outlined text-[16px]">expand_more</span></button>
+<div class="absolute left-0 mt-2 w-48 bg-surface-container-lowest border border-surface-variant/30 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+<a href="toneva.html" class="block px-4 py-3 text-on-surface hover:bg-surface-container-low hover:text-primary transition-colors font-label-caps text-label-caps border-b border-surface-variant/20 uppercase">TONEVA</a>
+<a href="trichovva.html" class="block px-4 py-3 text-on-surface hover:bg-surface-container-low hover:text-primary transition-colors font-label-caps text-label-caps uppercase">TRICHOVVA</a>
+</div>
+</div>
+<a href="clinical-evidence.html" class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors uppercase">Clinical Evidence</a>
+<a href="for-professionals.html" class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors uppercase">For Professionals</a>
+</nav>
+<span class="w-px h-5 bg-surface-variant" aria-hidden="true"></span>
+<a href="portal.html" class="inline-flex items-center gap-2 bg-primary text-on-primary border border-primary transition-colors px-5 py-2.5 rounded font-label-caps text-label-caps tracking-widest uppercase">
+<span class="material-symbols-outlined" style="font-size:16px;">lock</span>Practitioner Login
+</a>
+</div>
+<button data-xv-menu-btn aria-label="Toggle menu" class="md:hidden text-on-surface flex items-center">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div id="xv-mobile-menu" class="hidden md:hidden border-t border-surface-variant/30 bg-surface-container-lowest px-margin-mobile py-4">
+<nav class="flex flex-col">
+<a href="toneva.html" class="py-2.5 text-on-surface font-label-caps text-label-caps uppercase border-b border-surface-variant/20">TONEVA</a>
+<a href="trichovva.html" class="py-2.5 text-on-surface font-label-caps text-label-caps uppercase border-b border-surface-variant/20">TRICHOVVA</a>
+<a href="clinical-evidence.html" class="py-2.5 text-on-surface font-label-caps text-label-caps uppercase border-b border-surface-variant/20">Clinical Evidence</a>
+<a href="for-professionals.html" class="py-2.5 text-on-surface font-label-caps text-label-caps uppercase border-b border-surface-variant/20">For Professionals</a>
+<a href="portal.html" class="mt-3 inline-flex items-center justify-center gap-2 bg-primary text-on-primary px-5 py-3 rounded font-label-caps text-label-caps tracking-widest uppercase"><span class="material-symbols-outlined" style="font-size:16px;">lock</span>Practitioner Login</a>
+</nav>
+</div>
+</header>
+<script>(function(){var b=document.querySelector('[data-xv-menu-btn]');var m=document.getElementById('xv-mobile-menu');if(b&&m){b.addEventListener('click',function(){m.classList.toggle('hidden');});}})();</script>
+<!-- Main Content -->
+<main class="flex-grow relative overflow-hidden">
+<div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+<div class="absolute -top-1/4 left-1/2 -translate-x-1/2 w-[80vw] h-[80vw] max-w-[820px] max-h-[820px] rounded-full" style="background:radial-gradient(circle, rgba(175,41,8,0.07), rgba(175,41,8,0) 60%);"></div>
+</div>
+<section class="relative z-10 max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop pt-stack-lg pb-stack-lg md:pt-[4.5rem] md:pb-[6rem]">
+<div data-aos="fade-up" class="bg-surface-container-lowest border border-surface-variant/40 rounded-xl shadow-sm overflow-hidden">
+<!-- Status header -->
+<div class="px-8 md:px-12 pt-10 md:pt-12 pb-9 text-center border-b border-surface-variant/30">
+<span class="inline-flex items-center gap-2 font-label-caps text-label-caps uppercase tracking-widest text-primary bg-primary/10 border border-primary/20 px-4 py-1.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>Application Status
+</span>
+<div class="mx-auto mt-7 mb-6 w-20 h-20 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-size:40px;font-variation-settings:'FILL' 1;">hourglass_top</span>
+</div>
+<h1 class="font-display-lg text-[2.25rem] md:text-[2.75rem] leading-[1.1] tracking-[-0.01em] text-on-surface">Your credentials are under review</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto mt-4">Thank you for applying to the XOVVA practitioner network. Our medical team is verifying your professional credentials — you'll receive secure portal access by email as soon as your application is approved.</p>
+</div>
+<!-- Stepper -->
+<div class="px-8 md:px-12 py-10 border-b border-surface-variant/30">
+<ol class="grid grid-cols-1 sm:grid-cols-4 gap-6 sm:gap-3">
+<li class="flex sm:flex-col items-center sm:text-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined" style="font-size:20px;">check</span></div>
+<div><div class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface">Submitted</div><div class="font-body-md text-sm text-on-surface-variant">Application received</div></div>
+</li>
+<li class="flex sm:flex-col items-center sm:text-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 border-2 border-primary text-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1;">hourglass_top</span></div>
+<div><div class="font-label-caps text-label-caps uppercase tracking-wider text-primary">Under Review</div><div class="font-body-md text-sm text-on-surface-variant">In progress</div></div>
+</li>
+<li class="flex sm:flex-col items-center sm:text-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container border border-surface-variant text-on-surface-variant/50 flex items-center justify-center shrink-0"><span class="material-symbols-outlined" style="font-size:20px;">verified</span></div>
+<div><div class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant/60">Decision</div><div class="font-body-md text-sm text-on-surface-variant/60">Credentialing review</div></div>
+</li>
+<li class="flex sm:flex-col items-center sm:text-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container border border-surface-variant text-on-surface-variant/50 flex items-center justify-center shrink-0"><span class="material-symbols-outlined" style="font-size:20px;">lock_open</span></div>
+<div><div class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant/60">Portal Access</div><div class="font-body-md text-sm text-on-surface-variant/60">Order &amp; manage</div></div>
+</li>
+</ol>
+</div>
+<!-- Application details -->
+<div class="px-8 md:px-12 py-10 grid grid-cols-1 sm:grid-cols-2 gap-x-gutter gap-y-7 border-b border-surface-variant/30">
+<div>
+<div class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant/60 mb-1.5">Application ID</div>
+<div class="font-data-mono text-data-mono text-on-surface">XV-2026-04817</div>
+</div>
+<div>
+<div class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant/60 mb-1.5">Submitted</div>
+<div class="font-body-md text-body-md text-on-surface">June 28, 2026</div>
+</div>
+<div>
+<div class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant/60 mb-1.5">Reviewing Team</div>
+<div class="font-body-md text-body-md text-on-surface">Clinical Credentialing</div>
+</div>
+<div>
+<div class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant/60 mb-1.5">Estimated Decision</div>
+<div class="font-body-md text-body-md text-on-surface">2–3 business days</div>
+</div>
+</div>
+<!-- What we verify + actions -->
+<div class="px-8 md:px-12 py-10">
+<div class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant/60 mb-5">What we're verifying</div>
+<ul class="flex flex-col gap-3.5">
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary mt-0.5" style="font-size:20px;">badge</span><span class="font-body-md text-body-md text-on-surface">Medical license &amp; registration number</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary mt-0.5" style="font-size:20px;">domain</span><span class="font-body-md text-body-md text-on-surface">Clinic or practice registration</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary mt-0.5" style="font-size:20px;">workspace_premium</span><span class="font-body-md text-body-md text-on-surface">Professional standing &amp; specialty</span></li>
+</ul>
+<div class="mt-9 flex flex-col sm:flex-row gap-4">
+<a href="contact-support.html" class="bg-primary text-on-primary px-7 py-3.5 rounded hover:bg-primary-container transition-colors font-label-caps text-label-caps tracking-widest uppercase inline-flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined" style="font-size:18px;">support_agent</span>Contact our team
+</a>
+<a href="index.html" class="bg-surface-container-lowest text-primary border border-primary/40 px-7 py-3.5 rounded hover:bg-primary hover:text-on-primary transition-colors font-label-caps text-label-caps tracking-widest uppercase inline-flex items-center justify-center">Return to homepage</a>
+</div>
+</div>
+</div>
+<p class="text-center font-body-md text-body-md text-on-surface-variant mt-8">Haven't applied yet? <a href="register-clinic.html" class="text-primary font-semibold hover:underline">Register your clinic →</a></p>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface border-t border-surface-variant/40 w-full mt-auto">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-stack-md md:gap-gutter">
+<div class="md:col-span-5 flex flex-col gap-5">
+<a href="index.html" class="flex items-center" aria-label="XOVVA home">
+<img src="xovva-logo.png" alt="XOVVA" class="h-7 w-auto object-contain"/>
+</a>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Advanced clinical formulations for dermatologists and aesthetic professionals. Elevating the standard of professional skincare and haircare.</p>
+<p class="font-label-caps text-label-caps uppercase tracking-wider text-on-surface-variant/70 mt-2">&copy; 2026 XOVVA Pharmaceuticals &middot; For licensed medical professional use only.</p>
+</div>
+<div class="md:col-span-2 flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps uppercase tracking-widest text-primary">Products</h4>
+<ul class="flex flex-col gap-3">
+<li><a href="toneva.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">TONEVA</a></li>
+<li><a href="trichovva.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">TRICHOVVA</a></li>
+<li><a href="clinical-evidence.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Clinical Evidence</a></li>
+</ul>
+</div>
+<div class="md:col-span-2 flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps uppercase tracking-widest text-primary">Professionals</h4>
+<ul class="flex flex-col gap-3">
+<li><a href="for-professionals.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">For Professionals</a></li>
+<li><a href="register-clinic.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Register Your Clinic</a></li>
+<li><a href="portal.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Practitioner Portal</a></li>
+</ul>
+</div>
+<div class="md:col-span-3 flex flex-col gap-4">
+<h4 class="font-label-caps text-label-caps uppercase tracking-widest text-primary">Company</h4>
+<ul class="flex flex-col gap-3">
+<li><a href="medical-disclaimer.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Medical Disclaimer</a></li>
+<li><a href="ingredient-transparency.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Ingredient Transparency</a></li>
+<li><a href="privacy-policy.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Privacy Policy</a></li>
+<li><a href="contact-support.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Contact Support</a></li>
+<li><a href="careers.html" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Careers</a></li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, once: true, offset: 50 });</script>
+</body></html>
