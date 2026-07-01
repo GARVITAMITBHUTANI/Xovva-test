@@ -272,40 +272,61 @@
 <h2 class="font-headline-lg text-headline-lg md:text-headline-lg font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Request a Medical Representative</h2>
 <p class="font-body-md text-body-md text-on-surface-variant">Schedule an in-clinic demonstration or discuss account setup with your regional clinical specialist.</p>
 </div>
-<form action="https://formspree.io/f/your_form_id" method="POST" class="flex flex-col gap-6 mt-4">
+<form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col gap-6 mt-4"> 
+<input type="hidden" name="access_key" value="6de8d4de-142c-4ec3-94df-6981678553b3">
+<input type="hidden" name="subject" value="Request Medical Representative - XOVVA">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="flex flex-col gap-2">
 <label class="font-label-caps text-label-caps text-on-surface-variant" for="firstName">FIRST NAME</label>
-<input class="bg-transparent border border-outline-variant/50 focus:border-outline focus:ring-0 rounded px-4 py-3 font-body-md text-on-surface transition-colors" id="firstName" required="" type="text"/>
+<input class="bg-transparent border border-outline-variant/50 focus:border-outline focus:ring-0 rounded px-4 py-3 font-body-md text-on-surface transition-colors" id="firstName" name="firstName" required="" type="text"/>
 </div>
 <div class="flex flex-col gap-2">
 <label class="font-label-caps text-label-caps text-on-surface-variant" for="lastName">LAST NAME</label>
-<input class="bg-transparent border border-outline-variant/50 focus:border-outline focus:ring-0 rounded px-4 py-3 font-body-md text-on-surface transition-colors" id="lastName" required="" type="text"/>
+<input class="bg-transparent border border-outline-variant/50 focus:border-outline focus:ring-0 rounded px-4 py-3 font-body-md text-on-surface transition-colors" id="lastName" name="lastName" required="" type="text"/>
 </div>
 </div>
 <div class="flex flex-col gap-2">
 <label class="font-label-caps text-label-caps text-on-surface-variant" for="clinicName">CLINIC / PRACTICE NAME</label>
-<input class="bg-transparent border border-outline-variant/50 focus:border-outline focus:ring-0 rounded px-4 py-3 font-body-md text-on-surface transition-colors" id="clinicName" required="" type="text"/>
+<input class="bg-transparent border border-outline-variant/50 focus:border-outline focus:ring-0 rounded px-4 py-3 font-body-md text-on-surface transition-colors" id="clinicName" name="clinicName" required="" type="text"/>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="flex flex-col gap-2">
 <label class="font-label-caps text-label-caps text-on-surface-variant" for="email">PROFESSIONAL EMAIL</label>
-<input class="bg-transparent border border-outline-variant/50 focus:border-outline focus:ring-0 rounded px-4 py-3 font-body-md text-on-surface transition-colors" id="email" required="" type="email"/>
+<input class="bg-transparent border border-outline-variant/50 focus:border-outline focus:ring-0 rounded px-4 py-3 font-body-md text-on-surface transition-colors" id="email" name="email" required="" type="email"/>
 </div>
 <div class="flex flex-col gap-2">
 <label class="font-label-caps text-label-caps text-on-surface-variant" for="phone">CLINIC PHONE</label>
-<input class="bg-transparent border border-outline-variant/50 focus:border-outline focus:ring-0 rounded px-4 py-3 font-body-md text-on-surface transition-colors" id="phone" type="tel"/>
+<input class="bg-transparent border border-outline-variant/50 focus:border-outline focus:ring-0 rounded px-4 py-3 font-body-md text-on-surface transition-colors" id="phone" name="phone" required="" type="tel"/>
 </div>
 </div>
 <div class="flex flex-col gap-2">
 <label class="font-label-caps text-label-caps text-on-surface-variant" for="inquiry">NATURE OF INQUIRY</label>
-<select class="bg-transparent border border-outline-variant/50 focus:border-outline focus:ring-0 rounded px-4 py-3 font-body-md text-on-surface transition-colors" id="inquiry">
+<select class="bg-transparent border border-outline-variant/50 focus:border-outline focus:ring-0 rounded px-4 py-3 font-body-md text-on-surface transition-colors" id="inquiry" name="inquiry" required="">
 <option>Account Registration</option>
 <option>Schedule Product Demonstration</option>
 <option>Bulk Pricing Inquiry</option>
 <option>Clinical Protocol Support</option>
+<option value="Other">Other</option>
 </select>
 </div>
+<div class="flex flex-col gap-2 mt-4 hidden" id="otherInquiryContainer">
+    <label class="font-label-caps text-label-caps text-on-surface-variant" for="otherInquiry">PLEASE SPECIFY</label>
+    <input class="bg-transparent border border-outline-variant/50 focus:border-outline focus:ring-0 rounded px-4 py-3 font-body-md text-on-surface transition-colors" id="otherInquiry" name="otherInquiry" type="text" placeholder="Type your reason here..."/>
+</div>
+<script>
+    document.getElementById('inquiry').addEventListener('change', function() {
+        var container = document.getElementById('otherInquiryContainer');
+        var input = document.getElementById('otherInquiry');
+        if (this.value === 'Other') {
+            container.classList.remove('hidden');
+            input.setAttribute('required', 'required');
+        } else {
+            container.classList.add('hidden');
+            input.removeAttribute('required');
+            input.value = '';
+        }
+    });
+</script>
 <button class="bg-on-surface text-on-primary font-label-caps text-label-caps px-8 py-4 rounded hover:bg-primary transition-colors text-center mt-4 w-full md:w-auto md:self-end" type="submit">
                         SUBMIT INQUIRY
                     </button>

@@ -217,15 +217,15 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
 <div class="col-span-1 md:col-span-2">
 <label class="label-clinical" for="fullName">Full Legal Name</label>
-<input class="input-clinical" id="fullName" placeholder="Dr. Jane Doe" type="text"/>
+<input class="input-clinical" id="fullName" name="fullName" required="" placeholder="Dr. Jane Doe" type="text"/>
 </div>
 <div>
 <label class="label-clinical" for="licenseNumber">Medical License Number</label>
-<input class="input-clinical" id="licenseNumber" placeholder="e.g., MD12345678" type="text"/>
+<input class="input-clinical" id="licenseNumber" name="licenseNumber" required="" placeholder="e.g., MD12345678" type="text"/>
 </div>
 <div>
 <label class="label-clinical" for="specialty">Primary Specialty</label>
-<select class="input-clinical" id="specialty">
+<select class="input-clinical" id="specialty" name="specialty" required="">
 <option disabled="" selected="" value="">Select Specialty</option>
 <option value="dermatology">Dermatology</option>
 <option value="plastic_surgery">Plastic Surgery</option>
@@ -235,7 +235,7 @@
 </div>
 <div class="col-span-1 md:col-span-2">
 <label class="label-clinical" for="email">Professional Email Address</label>
-<input class="input-clinical" id="email" placeholder="doctor@clinic.com" type="email"/>
+<input class="input-clinical" id="email" name="email" required="" placeholder="doctor@clinic.com" type="email"/>
 </div>
 </div>
 <div class="mt-stack-md flex justify-end">
@@ -251,23 +251,23 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
 <div class="col-span-1 md:col-span-2">
 <label class="label-clinical" for="clinicName">Clinic/Practice Name</label>
-<input class="input-clinical" id="clinicName" placeholder="e.g., Advanced Dermatology Center" type="text"/>
+<input class="input-clinical" id="clinicName" name="clinicName" required="" placeholder="e.g., Advanced Dermatology Center" type="text"/>
 </div>
 <div class="col-span-1 md:col-span-2">
 <label class="label-clinical" for="address">Practice Address</label>
-<input class="input-clinical mb-2" id="address" placeholder="Street Address" type="text"/>
+<input class="input-clinical mb-2" id="address" name="address" required="" placeholder="Street Address" type="text"/>
 <div class="grid grid-cols-2 gap-2">
-<input class="input-clinical" placeholder="City" type="text"/>
-<input class="input-clinical" placeholder="State/Province" type="text"/>
+<input class="input-clinical" placeholder="City" name="city" required="" type="text"/>
+<input class="input-clinical" placeholder="State/Province" name="state" required="" type="text"/>
 </div>
 </div>
 <div>
 <label class="label-clinical" for="website">Clinic Website (Optional)</label>
-<input class="input-clinical" id="website" placeholder="https://" type="url"/>
+<input class="input-clinical" id="website" name="website" placeholder="https://" type="url"/>
 </div>
 <div>
 <label class="label-clinical" for="yearsPractice">Years in Practice</label>
-<input class="input-clinical" id="yearsPractice" min="0" placeholder="e.g., 10" type="number"/>
+<input class="input-clinical" id="yearsPractice" name="yearsPractice" required="" min="0" placeholder="e.g., 10" type="number"/>
 </div>
 </div>
 <div class="mt-stack-md flex justify-between">
@@ -310,7 +310,7 @@
 </div>
 <div>
 <label class="label-clinical" for="volume">Estimated Monthly Patient Volume (Relevant Indications)</label>
-<select class="input-clinical" id="volume">
+<select class="input-clinical" id="volume" name="volume" required="">
 <option disabled="" selected="" value="">Select Volume</option>
 <option value="1-25">1 - 25 patients</option>
 <option value="26-50">26 - 50 patients</option>
